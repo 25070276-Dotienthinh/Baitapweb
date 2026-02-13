@@ -2,25 +2,108 @@
 <html lang="vi">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Nội Dung Trang</title>
-    <style>
+    <title>My Website</title>
+    <style type="text/css">
+        *{text-decoration: none;
+        }
         body {
             font-family: Arial, sans-serif;
-            margin: 20px;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background: white;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        nav {
+            margin: 0;
             padding: 0;
         }
-        h1 {
-            color: #333;
+        .navbar {
+            background-color: #333;
+            overflow: hidden;
         }
-        p {
-            font-size: 16px;
-            line-height: 1.5;
+        .navbar a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+        .navbar a:hover {
+            background-color: #ff0000;
+            color: black;
+        }
+        nav#topmenu ul {
+            list-style: none;
+            background-color: #444;
+            text-align: center;
+            padding: 0;
+            margin: 0;
+        }
+        nav#topmenu li {
+            font-size: 24px;
+            line-height: 40px;
+            height: 40px;
+            display: inline-block;
+            padding: 20px;
+            }
+        nav#topmenu a {
+            text-decoration: none;
+            color: #fff;
+            }
+        .post {
+            padding: 20px;
+            font-family: 'Times New Roman', Times, serif;
+            font-size: 20px;
+            margin-bottom: 30px;
+        }
+        .post h1 {
+            font-size: 36px;
+            margin-bottom: 10px;
+        }
+        .post h2 {
+            font-size: 28px;
+            margin-bottom: 10px;
+            color: aqua;
+        }
+        footer {
+            background: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Chào mừng đến với trang của chúng tôi</h1>
-    <p>Đây là một ví dụ đơn giản về nội dung trang sử dụng HTML và CSS.</p>
+    <div class="navbar">
+        <a href="#home">Home</a>
+        <a href="#Tutorials">Tutorials</a>
+        <a href="#about">About</a>
+        <a href="#Newsletter">Newsletter</a>
+        <a href="#contact">Contact</a>
+    </div>
+
+    <div class="container">
+        <div class="post">
+            <h1>Just Another Day</h1>
+            <div class="meta">Written by Christina on January 11th</div>
+            <p>This is my second blog entry, and I just wanted to check in on you.</p>
+        </div>
+        <div class="post">
+            <h2>My First Blog Entry</h2>
+            <div class="meta">Written by Christina on January 10th</div>
+            <p>I’m so happy to write my first blog entry – yay!</p>
+        </div>
+    </div>
+    <footer>
+        © Copyright 2009 Your name. 
+    </footer>
 </body>
 </html>
