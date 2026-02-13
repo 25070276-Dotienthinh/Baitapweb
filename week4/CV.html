@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>CV của tôi</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                background: #f4f4f4;
+                color: #333;
+            }
+            .cv-container {
+                max-width: 1000px;
+                margin: 40px auto;
+                background: #fff;
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+            .sidebar {
+                background: #4b4943;
+                color: #fff;
+                padding: 30px;
+                display: inline-block;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .sidebar h1 {
+                margin: 0 0 10px;
+            }
+            .sidebar p {
+                margin: 5px 0;
+            }
+            .main {
+                padding: 100px;
+            }
+            .section {
+                margin-bottom: 20px;
+            }
+            .section h2 {
+                border-bottom: 2px solid #2c3e50;
+                padding-bottom: 5px;
+                margin-bottom: 10px;
+                color: #2c3e50;
+            }
+            a {
+                color: #3d8b32;
+                text-decoration: none;
+            }
+            ul {
+                list-style: none;
+                padding: 0;
+            }
+            ul li {
+                margin-bottom: 8px;
+            }
+            .social-icons i {
+                margin-right: 10px;
+                color: #2c3e50;
+            }
+    </style>
+    <!-- FONT AWESOME -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="cv-container">
+
+        <!-- SIDEBAR -->
+        <div class="sidebar">
+            <figure>
+                <img src="img/apple.png" alt="Ảnh đại diện">
+                <figcaption>Ảnh đại diện</figcaption>
+            </figure>
+
+            <div class="info">
+                <h1>Đỗ Tiến Thịnh</h1>
+                <p class="subtitle">Sinh viên phát triển web</p>
+                <p>Email: dtthinh1605@gmail.com</p>
+                <p>Điện thoại: 0365910275</p>
+                <p>Ngày sinh: 16/05/2007</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/otienthinh.2024" target="_blank" aria-label="Facebook">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+
+                    <a href="https://www.instagram.com/thinhh459/" target="_blank" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+
+                    <a href="https://github.com/25070276-Dotienthinh" target="_blank" aria-label="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="cv-container">
+        <!-- MAIN CONTENT -->
+        <div class="main">
+            <section>
+                <h2>Profile</h2>
+                <p>
+                    A passionate web development student with a solid foundation in building clean, structured, and
+                    responsive websites. Enthusiastic about UI/UX design and committed to continuous learning of modern
+                    frontend technologies to create seamless user experiences.
+                </p>
+            </section>
+            <section>
+                <h2>Skills</h2>
+                <ul class="skills-list">
+                    <li>HTML</li>
+                    <li>CSS</li>
+                    <li>JavaScript</li>
+                    <li>React</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Education</h2>
+                <table>
+                    <tr>
+                        <th>Year</th>
+                        <th>Institution</th>
+                        <th>Major</th>
+                    </tr>
+                    <tr>
+                        <td>2022 - 2025</td>
+                        <td>Nguyen Du High School</td>
+                        <td>Science</td>
+                    </tr>
+                    <tr>
+                        <td>2025 - Present</td>
+                        <td>VNU International School</td>
+                        <td>Financial Technology and Digital Business</td>
+                    </tr>
+                </table>
+            </section>
+            <section>
+                <h2>Experience</h2>
+                <details>
+                    <summary>Internship at ABC Company (2024)</summary>
+                    <p>Participated in the development of an e-commerce website, assisting in UI design and optimizing user experience.</p>
+                    <p>Learned about software development processes and teamwork in a professional environment.</p>
+                </details>
+                <details>
+                    <summary>Personal Project: Portfolio Website (2023)</summary>
+                    <p>Built a personal portfolio website to showcase projects and skills.</p>
+                    <p>Utilized HTML, CSS, and JavaScript to create an attractive and user-friendly site.</p>
+                </details>
+            </section>
+</body>
+</html>
