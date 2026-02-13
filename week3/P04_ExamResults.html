@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web fundamentals exam result</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 60%;
+            margin: 20px auto;
+        }
+        th, td {
+            border: 1px solid #333;
+            padding: 8px 12px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        caption {
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+        tfoot td {
+            font-weight: bold;
+            background-color: #eaeaea;
+        }
+    </style>
+</head>
+<body>
+        <table id="bangdiem">
+            <caption>Exam Results</caption>
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>First Name</th>
+                    <th>Last Name</th>
+                    <th>Score</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>01</td>
+                    <td>Gosho</td>
+                    <td>Goshev</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>02</td>
+                    <td>Tosho</td>
+                    <td>Toshev</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>03</td>
+                    <td>Gencho</td>
+                    <td>Genchev</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>04</td>
+                    <td>Draga</td>
+                    <td>Draganova</td>
+                    <td>500</td>
+                </tr>
+                <tr>
+                    <td>05</td>
+                    <td>Gosho</td>
+                    <td>Goshev</td>
+                    <td>500</td>
+                </tr>
+            </tbody>
+            <tfoot>
+                <tr>
+                    <td colspan="3">Total Score</td>
+                    <td id="tong"></td>
+                </tr>
+            </tfoot>
+        </table>
+        <script>
+            function tinhTong() {
+                let table = document.getElementById("bangdiem");
+                let rows = table.tBodies[0].rows; // lấy các hàng trong tbody
+                let sum = 0;
+
+                for (let i = 0; i < rows.length; i++) {
+                let score = parseFloat(rows[i].cells[3].innerText);
+                sum += score;
+                }
+
+                document.getElementById("tong").innerText = sum;
+            }
+                // gọi hàm khi trang tải xong
+                window.onload = tinhTong;
+</script>
+</body>
+</html>
