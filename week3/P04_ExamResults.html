@@ -89,8 +89,11 @@
                 sum += score;
                 }
 
-                document.getElementById("tong").innerText = sum;
-            }
+                let average = sum / rows.length; // tính trung bình
+                let roundedAverage = Math.round(average); // làm tròn thành số nguyên
+
+                document.getElementById("tong").innerText = roundedAverage;
+                }
                 // gọi hàm khi trang tải xong
                 window.onload = tinhTong;
         </script>
