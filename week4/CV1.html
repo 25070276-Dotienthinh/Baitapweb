@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>CV của tôi</title>
+    <!--FONT AWESOME-->
+    <link rel="stylesheet" href="css/style.css">
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                margin: 0;
+                background: #f4f4f4;
+                color: #333;
+            }
+            .cv-container {
+                max-width: 1000px;
+                margin: 40px auto;
+                background: #fff;
+                display: grid;
+                grid-template-columns: 1fr 2fr;
+                box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            }
+            .cv-container .content {
+                padding: 30px;
+                display: table-caption;
+                margin: 100px auto;
+
+            }
+            .sidebar {
+                background: #4b4943;
+                color: #fff;
+                padding: 30px;
+                display: inline-block;
+                text-align: center;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+            }
+            .sidebar h1 {
+                margin: 0 0 10px;
+            }
+            .sidebar p {
+                margin: 5px 0;
+            }
+            .main {
+                padding: 100px;
+            }
+            .section {
+                margin-bottom: 20px;
+            }
+            .section h2 {
+                border-bottom: 2px solid #2c3e50;
+                padding-bottom: 5px;
+                margin-bottom: 10px;
+                color: #2c3e50;
+            }
+            a {
+                color: #3d8b32;
+                text-decoration: none;
+            }
+            .content { 
+                display: grid; 
+                grid-template-columns: 1fr 1fr; 
+                gap: 35px; 
+                margin-top: 30px;
+                justify-content: center;
+            } 
+            .content { 
+                grid-template-columns: 1fr; 
+            }
+    </style>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+</head>
+<body>
+    <div class="cv-container">
+        <!-- HEADER -->
+         <div class="header">
+            <figure>
+                <img src="../img/apple.png" alt="Ảnh đại diện">
+                <figcaption>Ảnh đại diện</figcaption>
+            </figure>
+            </div>
+        <div class="info">
+            <h1>Đỗ Tiến Thịnh</h1>
+            <p class="subtitle">Sinh viên phát triển web</p>
+            <p>Email: dtthinh1605@gmail.com</p>
+            <p>Điện thoại: 0365910275</p>
+            <p>Ngày sinh: 16/05/2007</p>
+            <div class="social-links">
+                <a href="https://www.facebook.com/otienthinh.2024"><i class="fab fa-facebook"></i></a>
+                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="#"><i class="fab fa-linkedin"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- CONTENT -->
+     <div class="cv-container content">
+        <!--LEFT COLUMN-->
+        <div>
+            <section class="profile">
+                <h2>Profile</h2>
+                <p>Sinh viên năm nhất đam mê phát triển web, có kỹ năng lập trình cơ bản và mong muốn học hỏi thêm nhiều kiến thức mới.</p>
+            </section>
+            <section >
+                <h2>Skills</h2>
+                <div class="skills">  
+                    <span>HTML</span>
+                    <div class="bar">
+                        <div style="width: 90%;"></div>
+                    </div>
+                </div>
+                <div class="skills">
+                    <span>CSS</span>
+                    <div class="bar">
+                        <div style="width: 80%;"></div>
+                    </div>
+                </div>
+                <div class="skills">
+                    <span>JavaScript</span>
+                    <div class="bar">
+                        <div style="width: 70%;"></div>
+                    </div>
+                </div>
+                <div class="skills">
+                    <span>React</span>
+                    <div class="bar">
+                        <div style="width: 60%;"></div>
+                    </div>
+                </div>
+            </section>
+        </div>
+        <!--RIGHT COLUMN-->
+        <div>
+            <section class="education">
+                <h2>Education</h2>
+                <table>
+                    <tbody>
+                    <tr>
+                        <th>Năm</th>
+                        <th>Trường</th>
+                    </tr>
+                    <tr>
+                        <td>2024 - Hiện tại</td>
+                        <td>Trường Đại học Công nghệ Thông tin - ĐHQG TP.HCM</td>
+                    </tr>
+                    <tr>
+                        <td>2022 - 2024</td>
+                        <td>Trường THPT Nguyễn Du</td>
+                    </tr>
+                    </tbody>
+                </table>
+            </section>
+            <section class="experience">
+                <h2>Experience</h2>
+                <details open>
+                    <summary>Thực tập phát triển web tại Công ty ABC (06/2023 - 08/2023)</summary>
+                    <ul>
+                        <li>Hỗ trợ phát triển giao diện người dùng cho trang web công ty.</li>
+                        <li>Tối ưu hóa mã HTML, CSS và JavaScript để cải thiện hiệu suất trang web.</li>
+                        <li>Học hỏi quy trình làm việc nhóm và sử dụng các công cụ quản lý dự án.</li>
+                    </ul>
+                </details>
+                <details open>
+                    <summary>Tham gia dự án mã nguồn mở trên GitHub (09/2023 - Hiện tại)</summary>
+                    <ul>
+                        <li>Đóng góp mã nguồn cho các dự án phát triển web mã nguồn mở.</li>
+                        <li>Tham gia thảo luận và giải quyết các vấn đề kỹ thuật trong cộng đồng.</li>
+                        <li>Nâng cao kỹ năng lập trình và làm việc nhóm qua việc hợp tác với các nhà phát triển khác.</li>
+                    </ul>
+                </details>
+            </section>
+        </div>
+    </div>
+</body>
+</html>
