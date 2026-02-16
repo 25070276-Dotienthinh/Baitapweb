@@ -3,173 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <title>CV của tôi</title>
-    <!--FONT AWESOME-->
-    <link rel="stylesheet" href="css/style.css">
-        <style>
-            body {
-                font-family: Arial, sans-serif;
-                margin: 0;
-                background: #f4f4f4;
-                color: #333;
-            }
-            .cv-container {
-                max-width: 1000px;
-                margin: 40px auto;
-                background: #fff;
-                display: grid;
-                grid-template-columns: 1fr 2fr;
-                box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            }
-            .cv-container .content {
-                padding: 30px;
-                display: table-caption;
-                margin: 100px auto;
-
-            }
-            .sidebar {
-                background: #4b4943;
-                color: #fff;
-                padding: 30px;
-                display: inline-block;
-                text-align: center;
-                display: flex;
-                flex-direction: column;
-                justify-content: center;
-            }
-            .sidebar h1 {
-                margin: 0 0 10px;
-            }
-            .sidebar p {
-                margin: 5px 0;
-            }
-            .main {
-                padding: 100px;
-            }
-            .section {
-                margin-bottom: 20px;
-            }
-            .section h2 {
-                border-bottom: 2px solid #2c3e50;
-                padding-bottom: 5px;
-                margin-bottom: 10px;
-                color: #2c3e50;
-            }
-            a {
-                color: #3d8b32;
-                text-decoration: none;
-            }
-            .content { 
-                display: grid; 
-                grid-template-columns: 1fr 1fr; 
-                gap: 35px; 
-                margin-top: 30px;
-                justify-content: center;
-            } 
-            .content { 
-                grid-template-columns: 1fr; 
-            }
-    </style>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <style>
+
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+
+        body {
+            font-family: 'Segoe UI', Arial, sans-serif;
+            background: #ced4da;
+            padding: 40px 20px;
+            color: #333;
+            line-height: 1.6;
+        }
+    
+        .cv-wrap {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+            overflow: hidden; 
+        }
+
+        .header {
+            background: #1a252f;
+            color: white;
+            padding: 40px;
+            display: flex;
+            align-items: center;
+            gap: 30px;
+        }
+
+        .header figure img {
+            width: 130px;
+            height: 130px;
+            border-radius: 50%;
+            border: 4px solid #3498db;
+            object-fit: cover;
+        }
+
+        .info h1 { font-size: 32px; margin-bottom: 5px; color: #fff; text-transform: uppercase; }
+        .subtitle { color: #3498db; font-weight: bold; font-size: 18px; margin-bottom: 10px; }
+        .info p { font-size: 14px; opacity: 0.9; margin-bottom: 3px; }
+
+    
+        .social-links { margin-top: 15px; }
+        .social-links a {
+            color: #3498db !important;
+            font-size: 28px; 
+            text-decoration: none;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        .social-links a:hover { color: #fff !important; transform: scale(1.2); }
+
+    
+        .content {
+            display: flex;
+            border-top: 1px solid #eee;
+        }
+
+
+        .left-col {
+            width: 35%;
+            background: #f8f9fa;
+            padding: 30px;
+            border-right: 1px solid #eee;
+        }
+
+    
+        .right-col {
+            width: 65%;
+            padding: 30px;
+        }
+
+        section h2 {
+            font-size: 18px;
+            color: #2c3e50;
+            border-bottom: 2px solid #3498db;
+            padding-bottom: 5px;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            margin-top: 10px;
+        }
+
+        .experience { margin-top: 20px; }
+
+        details { display: block !important; margin-bottom: 20px; }
+        summary { 
+            display: block !important; 
+            font-weight: bold; 
+            font-size: 16px; 
+            color: #2c3e50; 
+            pointer-events: none; 
+            margin-bottom: 8px;
+        }
+        summary::-webkit-details-marker { display: none; }
+
+        .skills { margin-bottom: 15px; }
+        .skills span { font-size: 14px; font-weight: 600; }
+        .bar { background: #dee2e6; height: 10px; border-radius: 5px; margin-top: 5px; overflow: hidden; }
+        .bar div { background: #3498db; height: 100%; }
+
+
+        table { width: 100%; border-collapse: collapse; margin-top: 5px; }
+        th, td { padding: 10px; text-align: left; font-size: 14px; border-bottom: 1px solid #f1f1f1; }
+        th { color: #7f8c8d; }
+        
+        ul { padding-left: 20px; }
+        li { font-size: 14px; margin-bottom: 5px; color: #555; }
+    </style>
 </head>
 <body>
-    <div class="cv-container">
-        <!-- HEADER -->
-         <div class="header">
+<div class="cv-wrap">
+        <div class="header">
             <figure>
                 <img src="../img/apple.png" alt="Ảnh đại diện">
-                <figcaption>Ảnh đại diện</figcaption>
             </figure>
+            <div class="info">
+                <h1>Đỗ Tiến Thịnh</h1>
+                <p class="subtitle">Sinh viên phát triển web</p>
+                <p> Email : dtthinh1605@gmail.com</p>
+                <p> Phone : 0365910275</p>
+                <p> Birth : 16/05/2007</p>
+                
+                <div class="social-links">
+                    <a href="https://www.facebook.com/otienthinh.20242" target="_blank">
+                        <i class="fab fa-facebook"></i>
+                    </a>
+                    <a href="https://www.instagram.com/otienthinh.20242/" target="_blank">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/đỗ-tiến-thịnh-b1a9b7245/" target="_blank">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                </div>
             </div>
-        <div class="info">
-            <h1>Đỗ Tiến Thịnh</h1>
-            <p class="subtitle">Sinh viên phát triển web</p>
-            <p>Email: dtthinh1605@gmail.com</p>
-            <p>Điện thoại: 0365910275</p>
-            <p>Ngày sinh: 16/05/2007</p>
-            <div class="social-links">
-                <a href="https://www.facebook.com/otienthinh.2024"><i class="fab fa-facebook"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
-                <a href="#"><i class="fab fa-linkedin"></i></a>
+        </div>
+
+        <div class="content">
+            <div class="left-col">
+                <section class="profile">
+                    <h2>Profile</h2>
+                    <p>Sinh viên năm nhất đam mê phát triển web, có kỹ năng lập trình cơ bản và mong muốn học hỏi thêm nhiều kiến thức mới.</p>
+                </section>
+
+                <section>
+                    <h2>Skills</h2>
+                    <div class="skills">
+                        <span>HTML</span>
+                        <div class="bar"><div style="width: 85%;"></div></div>
+                    </div>
+                    <div class="skills">
+                        <span>CSS</span>
+                        <div class="bar"><div style="width: 80%;"></div></div>
+                    </div>
+                    <div class="skills">
+                        <span>JavaScript</span>
+                        <div class="bar"><div style="width: 70%;"></div></div>
+                    </div>
+                    <div class="skills">
+                        <span>React</span>
+                        <div class="bar"><div style="width: 60%;"></div></div>
+                    </div>
+                </section>
+            </div>
+
+            <div class="right-col">
+                <section class="education">
+                    <h2>Education</h2>
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Năm</th>
+                                <th>Trường</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>2024 - Hiện tại</td>
+                                <td>Đại học Công nghệ Thông tin - ĐHQG TP.HCM</td>
+                            </tr>
+                            <tr>
+                                <td>2022 - 2024</td>
+                                <td>Trường THPT Nguyễn Du</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <section class="experience">
+                    <h2>Experience</h2>
+                    <details open>
+                        <summary>Thực tập phát triển web tại Công ty ABC (06/2023 - 08/2023)</summary>
+                        <ul>
+                            <li>Hỗ trợ phát triển giao diện người dùng cho trang web công ty.</li>
+                            <li>Tối ưu hóa mã HTML, CSS và JavaScript cải thiện hiệu suất.</li>
+                        </ul>
+                    </details>
+                    <details open>
+                        <summary>Dự án mã nguồn mở GitHub (09/2023 - Hiện tại)</summary>
+                        <ul>
+                            <li>Đóng góp mã nguồn cho các dự án phát triển web.</li>
+                            <li>Nâng cao kỹ năng lập trình và làm việc nhóm.</li>
+                        </ul>
+                    </details>
+                </section>
             </div>
         </div>
     </div>
-    <!-- CONTENT -->
-     <div class="cv-container content">
-        <!---->
-        <div>
-            <section class="profile">
-                <h2>Profile</h2>
-                <p>Sinh viên năm nhất đam mê phát triển web, có kỹ năng lập trình cơ bản và mong muốn học hỏi thêm nhiều kiến thức mới.</p>
-            </section>
-            <section >
-                <h2>Skills</h2>
-                <div class="skills">  
-                    <span>HTML</span>
-                    <div class="bar">
-                        <div style="width: 90%;"></div>
-                    </div>
-                </div>
-                <div class="skills">
-                    <span>CSS</span>
-                    <div class="bar">
-                        <div style="width: 80%;"></div>
-                    </div>
-                </div>
-                <div class="skills">
-                    <span>JavaScript</span>
-                    <div class="bar">
-                        <div style="width: 70%;"></div>
-                    </div>
-                </div>
-                <div class="skills">
-                    <span>React</span>
-                    <div class="bar">
-                        <div style="width: 60%;"></div>
-                    </div>
-                </div>
-            </section>
-        </div>
-        <!--RIGHT COLUMN-->
-        <div>
-            <section class="education">
-                <h2>Education</h2>
-                <table>
-                    <tbody>
-                    <tr>
-                        <th>Năm</th>
-                        <th>Trường</th>
-                    </tr>
-                    <tr>
-                        <td>2024 - Hiện tại</td>
-                        <td>Trường Đại học Công nghệ Thông tin - ĐHQG TP.HCM</td>
-                    </tr>
-                    <tr>
-                        <td>2022 - 2024</td>
-                        <td>Trường THPT Nguyễn Du</td>
-                    </tr>
-                    </tbody>
-                </table>
-            </section>
-            <section class="experience">
-                <h2>Experience</h2>
-                <details open>
-                    <summary>Thực tập phát triển web tại Công ty ABC (06/2023 - 08/2023)</summary>
-                    <ul>
-                        <li>Hỗ trợ phát triển giao diện người dùng cho trang web công ty.</li>
-                        <li>Tối ưu hóa mã HTML, CSS và JavaScript để cải thiện hiệu suất trang web.</li>
-                        <li>Học hỏi quy trình làm việc nhóm và sử dụng các công cụ quản lý dự án.</li>
-                    </ul>
-                </details>
-                <details open>
-                    <summary>Tham gia dự án mã nguồn mở trên GitHub (09/2023 - Hiện tại)</summary>
-                    <ul>
-                        <li>Đóng góp mã nguồn cho các dự án phát triển web mã nguồn mở.</li>
-                        <li>Tham gia thảo luận và giải quyết các vấn đề kỹ thuật trong cộng đồng.</li>
-                        <li>Nâng cao kỹ năng lập trình và làm việc nhóm qua việc hợp tác với các nhà phát triển khác.</li>
-                    </ul>
-                </details>
-            </section>
-        </div>
-    </div>
+
 </body>
 </html>
