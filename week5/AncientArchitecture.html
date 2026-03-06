@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <title>Kiến trúc cổ đại</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Indie+Flower">
+    <style>
+        /*Alsoimport'Roboto'font*/
+        body {
+            font-family:Roboto,sans-serif; 
+            background:#e2d7aa;
+            color:#000000; 
+            font-size:16px; 
+            width:1180px; 
+            line-height:24px;
+            margin:0 auto;
+        }
+        body>div.img-container>img{ 
+            width:1100px;
+            height:450px;
+        }
+        body>div.img-container{ 
+            width:1600px;
+            height:450px;
+            margin-top:65px;
+        }
+        h1{
+            font-size:60px; 
+            font-family:'IndieFlower',cursive;
+            letter-spacing:5px; 
+            text-align:center; 
+            margin-top:65px;
+        }
+        a{
+            text-decoration:none;
+        }
+        nav{
+            margin:30px;
+            text-align:center;
+        }
+        nav a {
+            text-decoration:none; 
+            font-size:28px; 
+            color:#000000;
+        }
+        nav ul li {
+            list-style: none;
+            display: inline;
+            padding: 0 12px 0 12px;
+        }
+        nav ul li:first-of-type a, nav ul li:last-of-type a{
+            padding-left:0; 
+            color:#0a2d4a;
+            font-weight:bold;
+        } 
+        article{
+            width:370px;
+            display:inline-block;
+        }
+        main{
+            margin-top: 30px;
+        }
+        main > article img{
+            width:350px;
+            height:200px;
+            margin-bottom: 20px;
+        }
+        p {
+            width: 345px;
+            text-align: justify;
+            margin-bottom: 20px;
+        }
+        article img p::first-letter{
+            font-family: EucrosiaUPC sans-serif;
+            text-transform:uppercase;
+            font-size:40px;
+        }
+        .readmore a {
+            background: url(images/bg2.jpg);
+            color:#ffffff;
+            padding: 10px;
+            margin-top: 10px;
+            text-transform: uppercase;
+        }
+        footer{
+            margin:0;
+            padding:10px 0 10px 0; 
+            text-align:center;}
+        article p.last-of-type span:first-of-type a::before{
+            content: url("images/comment.png");
+            position:relative; 
+            padding:10px; 
+            right:5px;
+            top:7px;
+        }
+        </style>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+    <h1>Kiến trúc cổ đại</h1>
+    <div class="img-container">
+        <img src="../img/apple.png" alt="Ancient Architecture">
+    </div>
+    <main>
+        <article>
+            <img src="../img/banana.png" alt="Colosseum">
+            <p>Đây là một trong những công trình kiến trúc cổ đại nổi tiếng nhất thế giới, được xây dựng vào thế kỷ thứ 1 sau Công nguyên tại Rome, Ý. Colosseum được sử dụng cho các trận đấu gladiator và các sự kiện giải trí khác trong thời kỳ La Mã cổ đại. Với sức chứa lên đến 50.000 khán giả, nó là một biểu tượng của sự vĩ đại và quyền lực của đế chế La Mã.</p>
+            <div class="readmore"><a href="#">Read More</a></div>
+        </article>
+        <article>
+            <img src="../img/bear.jpg" alt="Pyramids">
+            <p>Kim tự tháp Ai Cập là một trong những công trình kiến trúc cổ đại nổi tiếng nhất thế giới, được xây dựng vào khoảng 4.500 năm trước Công nguyên tại Ai Cập. Các kim tự tháp này được xây dựng để làm lăng mộ cho các pharaoh và là biểu tượng của quyền lực và sự vĩ đại của nền văn minh Ai Cập cổ đại. Kim tự tháp lớn nhất, Kim tự tháp Giza, vẫn đứng vững sau hàng ngàn năm và là một trong những kỳ quan thế giới cổ đại.</p>
+            <div class="readmore"><a href="#">Read More</a></div>
+        </article>
+        <article>
+            <img src="../img/kiwi.png" alt="Parthenon">
+            <p>Đền Parthenon là một công trình kiến trúc cổ đại nổi tiếng được xây dựng vào thế kỷ thứ 5 trước Công nguyên tại Athens, Hy Lạp. Đền này được xây dựng để tôn vinh nữ thần Athena, người bảo trợ của thành phố Athens. Với kiến trúc tinh tế và các tác phẩm điêu khắc tuyệt đẹp, Parthenon là một biểu tượng của sự vĩ đại và nghệ thuật của nền văn minh Hy Lạp cổ đại.</p>
+            <div class="readmore"><a href="#">Read More</a></div>
+        </article>
+    </main>
