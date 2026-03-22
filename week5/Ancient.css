@@ -34,6 +34,18 @@ nav ul li.active {
     margin: 20px 0;
     font-family: cursive;
 }
+/* Center Image */
+.center-image {
+    display: flex;
+    justify-content: center;
+    margin: 20px 0;
+}
+
+.center-image img {
+    width: 70%;
+    max-width: 900px;
+    border-radius: 8px;
+}
 
 /* Banner */
 .banner {
