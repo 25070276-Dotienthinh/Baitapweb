@@ -18,7 +18,7 @@ body {
 }
 
 .nav-actions button {
-  background: #ff4b2b;
+  background: #061fff;
   color: white;
   border: none;
   padding: 8px;
@@ -28,7 +28,7 @@ body {
 /* HERO */
 .hero {
   height: 250px;
-  background: linear-gradient(to right, #ff416c, #ff4b2b);
+  background: linear-gradient(to right, #1c3df7, #ff4b2b);
   color: white;
   display: flex;
   align-items: center;
