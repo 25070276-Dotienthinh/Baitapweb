@@ -1,4 +1,5 @@
-const events = [
+// ===== LOAD DATA =====
+let events = JSON.parse(localStorage.getItem("events")) || [
   {
     title: "Concert Sơn Tùng",
     desc: "Show âm nhạc cực đỉnh",
@@ -7,45 +8,18 @@ const events = [
     date: "2026-04-15",
     location: "Hà Nội",
     price: "500.000đ"
-  },
-  {
-    title: "Workshop Marketing",
-    desc: "Học marketing",
-    img: "https://picsum.photos/300/200?2",
-    category: "Hội thảo",
-    date: "2026-04-10",
-    location: "TP.HCM",
-    price: "200.000đ"
-  },
-  {
-    title: "Tech Conference",
-    desc: "Sự kiện công nghệ",
-    img: "https://picsum.photos/300/200?3",
-    category: "Công nghệ",
-    date: "2026-04-12",
-    location: "Hà Nội",
-    price: "Miễn phí"
-  },
-  {
-    title: "Vé BlackPink",
-    desc: "Vé bán lại giá tốt",
-    img: "https://picsum.photos/300/200?4",
-    category: "Vé bán lại",
-    date: "2026-04-20",
-    location: "TP.HCM",
-    price: "1.200.000đ"
   }
 ];
 
 let currentCategory = "all";
 
-// RENDER
+// ===== RENDER =====
 function renderEvents(category = "all") {
   currentCategory = category;
   applyFilters();
 }
 
-// FILTER
+// ===== FILTER =====
 function applyFilters() {
   const date = document.getElementById("filterDate").value;
   const location = document.getElementById("filterLocation").value;
@@ -67,7 +41,7 @@ function applyFilters() {
   renderList(filtered);
 }
 
-// HIỂN THỊ
+// ===== HIỂN THỊ =====
 function renderList(data) {
   const list = document.getElementById("eventList");
   list.innerHTML = "";
@@ -100,26 +74,15 @@ function renderList(data) {
     `;
 
     card.onclick = () => {
-    localStorage.setItem("eventDetail", JSON.stringify(e));
-    window.location.href = "detail.html";
+      localStorage.setItem("eventDetail", JSON.stringify(e));
+      window.location.href = "sự kiện.html";
     };
 
     list.appendChild(card);
   });
 }
 
-// MODAL
-function openModal(t, d) {
-  document.getElementById("modal").style.display = "block";
-  document.getElementById("title").innerText = t;
-  document.getElementById("desc").innerText = d;
-}
-
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
-}
-
-// LOGIN
+// ===== MODAL LOGIN =====
 function openLogin() {
   document.getElementById("login").style.display = "block";
 }
@@ -128,14 +91,60 @@ function closeLogin() {
   document.getElementById("login").style.display = "none";
 }
 
-// NAVBAR
+// ===== CREATE EVENT MODAL =====
 function openCreateEvent() {
-  alert("Chức năng demo");
+  document.getElementById("createEventModal").style.display = "block";
 }
 
+function closeCreateEvent() {
+  document.getElementById("createEventModal").style.display = "none";
+}
+
+// ===== CREATE EVENT =====
+function createEvent() {
+  const title = document.getElementById("evTitle").value;
+  const desc = document.getElementById("evDesc").value;
+  const category = document.getElementById("evCategory").value;
+  const date = document.getElementById("evDate").value;
+  const location = document.getElementById("evLocation").value;
+  const price = document.getElementById("evPrice").value;
+
+  if (!title || !desc || !category || !date || !location || !price) {
+    alert("Vui lòng nhập đầy đủ!");
+    return;
+  }
+
+  const newEvent = {
+    title,
+    desc,
+    category,
+    date,
+    location,
+    price,
+    img: "https://picsum.photos/300/200?random=" + Math.random()
+  };
+
+  events.push(newEvent);
+
+  // Lưu vào localStorage
+  localStorage.setItem("events", JSON.stringify(events));
+
+  // Reset form
+  document.getElementById("evTitle").value = "";
+  document.getElementById("evDesc").value = "";
+  document.getElementById("evCategory").value = "";
+  document.getElementById("evDate").value = "";
+  document.getElementById("evLocation").value = "";
+  document.getElementById("evPrice").value = "";
+
+  closeCreateEvent();
+  renderEvents();
+}
+
+// ===== NAVBAR =====
 function openMyTickets() {
-  alert("Cần backend 😄");
+  alert("Chức năng 'Vé của tôi' cần backend 😄");
 }
 
-// LOAD
+// ===== LOAD =====
 renderEvents();

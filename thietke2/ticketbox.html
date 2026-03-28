@@ -141,5 +141,43 @@
     </div>
   </div>
 </footer>
+<!-- CREATE EVENT MODAL -->
+<div id="createEventModal" class="modal">
+  <div class="modal-content">
+    <span onclick="closeCreateEvent()">×</span>
+    <h3>Tạo sự kiện</h3>
+
+    <input id="evTitle" placeholder="Tên sự kiện"><br>
+
+    <input id="evDesc" placeholder="Mô tả"><br>
+
+    <!-- CATEGORY -->
+    <select id="evCategory">
+      <option value="">Chọn loại</option>
+      <option>Âm nhạc</option>
+      <option>Hội thảo</option>
+      <option>Công nghệ</option>
+      <option>Startup</option>
+      <option>Thể thao</option>
+      <option>Vé bán lại</option>
+      <option>Khác</option>
+    </select><br>
+
+    <!-- DATE -->
+    <input type="date" id="evDate"><br>
+
+    <!-- LOCATION -->
+    <select id="evLocation">
+      <option value="">Chọn địa điểm</option>
+      <option>Hà Nội</option>
+      <option>TP.HCM</option>
+      <option>Đà Nẵng</option>
+    </select><br>
+
+    <input id="evPrice" placeholder="Giá vé"><br>
+
+    <button onclick="createEvent()">Tạo</button>
+  </div>
+</div>
 </body>
 </html>

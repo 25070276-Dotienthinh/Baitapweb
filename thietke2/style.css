@@ -284,3 +284,22 @@ body {
   padding: 12px 20px;
   font-size: 16px;
 }
+/* == Thêm sự kiện == */
+.modal-content input,
+.modal-content select {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.modal-content button {
+  width: 100%;
+  padding: 10px;
+  background: #1c3df7;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
