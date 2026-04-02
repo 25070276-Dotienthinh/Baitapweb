@@ -52,7 +52,7 @@ function renderEvents(filter = "all") {
 
   filtered.forEach(e => {
     list.innerHTML += `
-      <div class="card" onclick="goToanhtraisayhi('${e.title}', '${e.date}', '${e.location}', '${e.price}', '${e.img}')">
+      <div class="card" onclick="goToEvent(${e.id})">
         <div class="card-img">
           <img src="${e.img}">
           ${e.hot ? `<div class="tag">HOT</div>` : ""}
