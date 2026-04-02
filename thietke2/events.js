@@ -1,5 +1,6 @@
 let events = [
   {
+    id: 25,
     title: "Concert Anh Trai Say hi",
     desc: "Live concert cực cháy",
     category: "Nhạc sống",
@@ -8,6 +9,15 @@ let events = [
     price: "1.000.000đ",
     hot: true,
     img: "anhtraisayhi.jpeg"
+  },
+  { id: 1, title: "Concert Blackpink: World Tour",
+    desc: "Live concert Blackpink", 
+    category: "Nhạc sống", 
+    date: "2026-03-21", 
+    location: "Sân Mỹ Đình", 
+    price: "2.500.000đ", 
+    hot: true, 
+    img: "blackpink.jpeg" 
   },
   {
     title: "Concert Tổ quốc 30/4 - 1/5",
@@ -52,7 +62,7 @@ function renderEvents(filter = "all") {
 
   filtered.forEach(e => {
     list.innerHTML += `
-      <div class="card" onclick="goToEvent(${e.id})">
+      <div class="card" onclick="goToanhtraisayhi('${e.title}', '${e.date}','${e.location}', '${e.price}', '${e.img}')">
         <div class="card-img">
           <img src="${e.img}">
           ${e.hot ? `<div class="tag">HOT</div>` : ""}
