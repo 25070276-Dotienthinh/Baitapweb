@@ -1,6 +1,138 @@
 let events = [
+  { 
+    id: 1, 
+    title: "Concert Blackpink: World Tour",
+    desc: "Live concert Blackpink", 
+    category: "Nhạc sống", 
+    date: "2026-03-21", 
+    location: "Sân Mỹ Đình", 
+    price: "2.500.000đ", 
+    hot: true, 
+    img: "blackpink.jpeg" 
+  },
   {
-    id: 25,
+    id: 2,
+    title: "Workshop: Art Therapy - Vẽ Pastel",
+    desc: "Trải nghiệm vẽ pastel",
+    category: "Tham quan & Trải nghiệm",
+    date: "2026-03-21",
+    location: "EventHub Studio",
+    price: "Miễn phí",
+    hot: false,
+    img : "",
+  },
+  {
+    id: 3,
+    title: "Vietnam Tech Expo: AI & Future",
+    desc: "Triển lãm công nghệ AI",
+    category: "Tham quan & Trải nghiệm",
+    date: "2026-03-05",
+    location: "VNU Innovation Hub",
+    price: "Miễn phí",
+    hot: false,
+    img: "",
+  },
+  {
+    id: 4,
+    title: "Giải Bóng đá MB Hanoi Cup 2026",
+    desc: "Giải bóng đá hấp dẫn nhất Hà Nội",
+    category: "Thể thao",
+    date: "2026-03-25",
+    location: "Sân Mỹ Đình",
+    price: "200.000đ",
+    hot: true,
+    img: "mbhanoicup.jpeg"
+  },
+  {
+    id: 5,
+    title: "Đêm Nhạc Trịnh: Nối Vòng Tay Lớn",
+    desc: "Đêm nhạc tưởng nhớ Trịnh Công Sơn",
+    category: "Nhạc sống",
+    date: "2026-03-28",
+    location: "Nhà hát Lớn Hà Nội",
+    price: "800.000đ",
+    hot: true,
+    img: "trinhcongson.jpeg"
+  },
+  {
+    id: 6,
+    title: "Tech Talk: Web3 & Blockchain",
+    desc: "Hội thảo về Web3 và Blockchain",
+    category: "Tham quan & Trải nghiệm",
+    date: "2026-03-12",
+    location: "Quận 1, TP.HCM",
+    price: "150000đ",
+    hot: false,
+    img: "",
+  },
+  {
+    id: 7,
+    title: "VNU Fintech Forum 2026",
+    desc: "Diễn đàn Fintech hàng đầu Việt Nam",
+    category: "Tham quan & Trải nghiệm",
+    date: "2026-03-05",
+    location: "VNU-IS Hall",
+    price: "Miễn phí",
+    hot: false,
+    img: "",
+  },
+  {
+    id: 8,
+    title: "Vietnam Cosplay Festival 2026",
+    desc: "Lễ hội cosplay lớn nhất Việt Nam",
+    category: "Tham quan & Trải nghiệm",
+    date: "2026-04-10",
+    location: "Công viên Thống Nhất",
+    price: "120.000đ",
+    hot: true,
+    img: "anhtraisayhi.jpeg"
+  },
+  {
+    id: 9,
+    title: "Marathon Vì Cộng Đồng - UpRace",
+    category: "Thể thao",
+    date: "2026-03-15",
+    location: "Hồ Gươm",
+    price: "Miễn phí",
+    hot: true,
+    img: "marathon.jpeg"
+  },
+  {
+    id: 10,
+    title: "Vietnam Fintech Summit 2026",
+    desc: "Hội nghị thượng đỉnh Fintech Việt Nam",
+    category: "Tham quan & Trải nghiệm",
+    date: "2026-03-15",
+    location: "Lotte Center Hà Nội",
+    price: "500.000đ",
+    hot: true,
+    img: "",
+  },
+  {
+    id: 11,
+    title: "VCS League Championship (LOL)",
+    desc: "Giải đấu Liên Minh Huyền Thoại lớn nhất Việt Nam",
+    category: "Thể thao",
+    date: "2026-03-30",
+    location: "GG Stadium",
+    price: "100.000đ",
+    hot: true,
+    img: "vcs.jpeg"
+  },
+  {
+    id: 12,
+    title: "Triển lãm Vietnam Auto Expo",
+    desc: "Triển lãm ô tô lớn nhất Việt Nam",
+    category: "Tham quan & Trải nghiệm",
+    date: "2026-04-20",
+    location: "SECC Quận 7",
+    price: "50.000đ",
+    hot: true,
+    img: "autoexpo.jpeg",
+  },
+
+  {
+    id: 26,
     title: "Concert Anh Trai Say hi",
     desc: "Live concert cực cháy",
     category: "Nhạc sống",
@@ -9,15 +141,6 @@ let events = [
     price: "1.000.000đ",
     hot: true,
     img: "anhtraisayhi.jpeg"
-  },
-  { id: 1, title: "Concert Blackpink: World Tour",
-    desc: "Live concert Blackpink", 
-    category: "Nhạc sống", 
-    date: "2026-03-21", 
-    location: "Sân Mỹ Đình", 
-    price: "2.500.000đ", 
-    hot: true, 
-    img: "blackpink.jpeg" 
   },
   {
     title: "Concert Tổ quốc 30/4 - 1/5",
@@ -192,7 +315,7 @@ function createEvent() {
   closeCreateEvent();
 }
 
-function goToanhtraisayhi(title, date, location, price, img) {
+function gotoDetail(title, date, location, price, img) {
   const url = `anhtraisayhi.html?title=${encodeURIComponent(title)}
   &date=${encodeURIComponent(date)}
   &location=${encodeURIComponent(location)}
