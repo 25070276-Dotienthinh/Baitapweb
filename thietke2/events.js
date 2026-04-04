@@ -130,7 +130,6 @@ let events = [
     hot: true,
     img: "autoexpo.jpeg",
   },
-
   {
     id: 26,
     title: "Concert Anh Trai Say hi",
