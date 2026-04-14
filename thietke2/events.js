@@ -41,7 +41,7 @@ let events = [
     date: "2026-03-25",
     location: "Sân Mỹ Đình",
     price: "200.000đ",
-    hot: true,
+    hot: false,
     img: "mbhanoicup.jpeg"
   },
   {
@@ -52,7 +52,7 @@ let events = [
     date: "2026-03-28",
     location: "Nhà hát Lớn Hà Nội",
     price: "800.000đ",
-    hot: true,
+    hot: false,
     img: "trinhcongson.jpeg"
   },
   {
@@ -95,7 +95,7 @@ let events = [
     date: "2026-03-15",
     location: "Hồ Gươm",
     price: "Miễn phí",
-    hot: true,
+    hot: false,
     img: "marathon.jpeg"
   },
   {
@@ -117,7 +117,7 @@ let events = [
     date: "2026-03-30",
     location: "GG Stadium",
     price: "100.000đ",
-    hot: true,
+    hot: false,
     img: "vcs.jpeg"
   },
   {
@@ -128,7 +128,7 @@ let events = [
     date: "2026-04-20",
     location: "SECC Quận 7",
     price: "50.000đ",
-    hot: true,
+    hot: false,
     img: "autoexpo.jpeg",
   },
   {
@@ -149,7 +149,7 @@ let events = [
     date: "2026-03-14",
     location: "Skyline Bar",
     price: "350.000đ",
-    hot: true,
+    hot: false,
     img: "jazz.jpeg"
   },
   {
@@ -159,7 +159,7 @@ let events = [
     date: "2026-03-14",
     location: "Phố đi bộ",
     price: "150.000đ",
-    hot: true,
+    hot: false,
     img: "lehoianhsang.jpeg"
   },
   {
@@ -170,7 +170,7 @@ let events = [
     date: "2026-03-18",
     location: "Khách sạn Melia Hà Nội",
     price: "Miễn phí",
-    hot: true,
+    hot: false,
     img: "cocua.jpeg"
   },
   {
@@ -181,7 +181,7 @@ let events = [
     date: "2026-06-20",
     location: "Sân Quần Ngựa",
     price: "1.800.000đ",
-    hot: true,
+    hot: false,
     img: "kpopfesta.jpeg"
   },
   {
@@ -191,7 +191,9 @@ let events = [
     category: "Tham quan & Trải nghiệm",
     date: "2026-03-21",
     location: "Bát Tràng Studio",
+    hot: false,
     price: "450000đ",
+    img: "gom.jpg"
   },
   {
     id: 19,
@@ -200,7 +202,9 @@ let events = [
     category: "Tham quan & Trải nghiệm",
     date: "2026-03-22",
     location: "Đường Sách 19/12",
+    hot: false,
     price: "Miễn phí",
+    img: "sach.jpg"
   },
   {
     id: 20,
@@ -222,7 +226,7 @@ let events = [
     location: "SECC Quận 7",
     price: "1.200.000đ",
     hot: true,
-    img: "vba.jpeg"
+    img: "rapviet.jpeg"
   },
   {
     id: 22,
@@ -265,9 +269,21 @@ let events = [
     date: "2026-03-02",
     time: "19:00",
     location: "Sân Mỹ Đình",
-    price: "1.200.000đ",
-    hot: false,
+    price: "1.000.000đ",
+    hot: true,
     img: "anhtraisayhi.jpeg"
+  },
+  {
+    id: 53,
+    title: "GreenGreen Cortis",
+    desc: "Live concert",
+    category: "Nhạc sống",
+    date: "2026-04-20",
+    time: "19:00",
+    location: "Vincom center",
+    price: "1.500.000đ",
+    hot: true,
+    img: "cortis.jpg"
   },
   {
     id: 26,
@@ -508,1137 +524,16 @@ let events = [
   {
     id: 48,
     title: "Concert Tổ quốc 30/4 -1/5",
+    file: "index.html",
     desc: "Đêm nhạc kỷ niệm ngày giải phóng miền Nam",
     category: "Nhạc sống",
     date: "2026-04-30", time: "20:00",
     location: "Quảng trường Ba Đình",
     price: "Miễn phí",
     hot: true,
-    img: "toquoc.jpeg"
+    img: "concerttoquoc.jpg"
   },
-  {
-    id: 49,
-    title: "Trải nghiệm: Đạp xe đêm Hà Nội",
-    desc: "Trải nghiệm đạp xe đêm quanh Hồ Gươm",
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-04-30", time: "22:00",
-    location: "Nhà hát Lớn",
-    price: "150.000đ",
-    hot: false,
-    img: "https://tse1.mm.bing.net/th/id/OIP.iUVDH5ADwrk8-5HtAi6WEwHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
-  },
-  {
-    id: 50,
-    title: "Seminar: Fintech & Cybersecurity",
-    desc: "Hội thảo về Fintech và An ninh mạng",
-    category: "Hội thảo & Workshop",
-    date: "2026-04-08", time: "9:00",
-    location: "VNU-IS Building",
-    price: "Miễn phí",
-    hot: false,
-    img: "https://tse4.mm.bing.net/th/id/OIP.7n9s8Xo2l3m1e5j6qj8c9QHaEo?rs=1&pid=ImgDetMain&o=7&rm=3",
-  },
-  {
-    id: 51,
-    title: "Giải Tennis Hà Nội Open 2026",
-    desc: "Giải tennis chuyên nghiệp tại Hà Nội",
-    category: "Thể thao",
-    date: "2026-04-13", time: "7:30",
-    location: "Sân Quần Ngựa",
-    price: "200.000đ",
-    hot: false,
-    img: "tennis.jpeg",
-  },
-  {
-    id: 52,
-    title: "Tham quan thuỷ cung",
-    desc: "Trải nghiệm thế giới dưới nước tại thuỷ cung lớn nhất Việt Nam",
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-04-16", time: "8:00",
-    location: "Lotte Tây Hồ",
-    price: "250.000đ",
-    hot: false,
-    img: "thuysinh.jpeg",
-  },
-  { id: 53, 
-    title: "GreenGreen Cortis", 
-    desc: "Đêm nhạc GreenGreen Cortis với sự tham gia của nhiều nghệ sĩ nổi tiếng",
-    category: "Nhạc sống",
-    date: "2026-04-20", time: "18:00", 
-    location: "Vincom Center", 
-    color: "bg-red-600", 
-    price: "300.000đ",
-  },
-  { 
-    id: 54, 
-    title: "Yoga Sunset: Khoảnh khắc hoàng hôn",
-    desc: "Buổi tập yoga ngoài trời ngắm hoàng hôn tại công viên",
-    category: "Tham quan & Trải nghiệm", 
-    date: "2026-04-23", time: "17:30", 
-    location: "West Lake Park", 
-    color: "bg-orange-300", 
-    price: "150.000đ", 
-  },
-  { 
-    id: 55, 
-    title: "Jazz Classic: Blue Note Night", 
-    desc: "Đêm nhạc jazz kinh điển với sự tham gia của nhiều nghệ sĩ nổi tiếng",
-    category: "Nhạc sống",
-    date: "2026-04-28", time: "20:00", 
-    location: "Cool Cat Club", 
-    color: "bg-indigo-900", 
-    price: "400.000đ",
-  },
-  { 
-    id: 56, 
-    title: "Saigon Garage Sale: Tái chế & Đồ cũ", 
-    desc: "Sự kiện mua bán đồ cũ và tái chế tại Sài Gòn",
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-04-04", time: "09:00", 
-    location: "Quận 2, HCM", color: "bg-yellow-600", 
-    price: "Miễn phí",
-  },
-  { 
-    id: 57, 
-    title: "Trải nghiệm: Khám phá Vũ trụ 3D", 
-    desc: "Trải nghiệm khám phá vũ trụ qua công nghệ 3D tại nhà kính thiên văn",
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-04-09", time: "19:00", 
-    location: "Hanoi Planetarium", 
-    color: "bg-blue-900", 
-    price: "80.000đ" 
-  },
-  { 
-    id: 58, 
-    title: "Workshop: Sáng tạo Nến Thơm", 
-    desc: "Học cách tạo ra những chiếc nến thơm độc đáo",
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-04-14", time: "14:00", 
-    location: "Scent Lab", 
-    color: "bg-rose-200", 
-    price: "380.000đ",
-  },
-  { 
-    id: 59, 
-    title: "Giải Cờ vua Sinh viên VNU", 
-    desc: "Giải cờ vua dành cho sinh viên VNU với sự tham gia của nhiều trường đại học",
-    category: "Thể thao",
-    date: "2026-04-22", time: "08:00", 
-    location: "VNU-IS Library", 
-    color: "bg-zinc-800", 
-    price: "Miễn phí", 
-  },
-  { 
-    id: 60, 
-    title: "Bootcamp: Python for Data Analysis",
-    desc: "Khóa học ngắn hạn về Python cho phân tích dữ liệu",
-    category: "Hội thảo & Workshop", 
-    date: "2026-04-15", time: "18:00", 
-    location: "Online via MS Teams", 
-    color: "bg-yellow-500", 
-    price: "Miễn phí", 
-  },
-  { 
-    id: 61, 
-    title: "Lễ hội Cosplay: Manga Festival",
-    desc: "Lễ hội cosplay với chủ đề manga và anime",
-    category: "Tham quan & Trải nghiệm", 
-    date: "2026-04-26", time: "09:00", 
-    location: "AEON Mall Long Biên", 
-    color: "bg-purple-600", 
-    price: "Miễn phí",
-  },
-  { 
-    id: 62, 
-    title: "Hội thảo: Startup Gen Z & AI", 
-    desc: "Hội thảo về startup thế hệ Gen Z và trí tuệ nhân tạo",
-    category: "Hội thảo & Workshop",
-    date: "2026-04-11", time: "14:00", 
-    location: "Hanoi Hub", 
-    color: "bg-emerald-400", 
-    price: "100.000đ",
-  },
-  { 
-    id: 63, 
-    title: "Đêm nhạc: Rock Việt - Bùng nổ", 
-    desc: "Đêm nhạc rock Việt Nam với sự tham gia của nhiều nghệ sĩ nổi tiếng",
-    category: "Nhạc sống",
-    date: "2026-04-18", time: "19:00", 
-    location: "Sân vận động Tự Do", 
-    color: "bg-black", 
-    price: "300.000đ" 
-  },
-  { 
-    id: 64, 
-    title: "Workshop: Pottery & Decor", 
-    desc: "Học cách tạo ra những chiếc nến thơm độc đáo",
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-04-05", time: "10:00", 
-    location: "Bát Tràng", 
-    color: "bg-orange-200", 
-    price: "450.000đ" 
-  },
-  { 
-    id: 65, 
-    title: "Giải Bơi lội Thanh niên 2026",
-    desc: "Giải đấu bơi lội dành cho thanh niên năm 2026",
-    category: "Thể thao",
-    date: "2026-04-30", time: "07:00", 
-    location: "Cung dưới nước Mỹ Đình", 
-    color: "bg-blue-300", 
-    price: "Miễn phí" 
-  },
-  { 
-    id: 66, 
-    title: "Khám phá: Landscape Photography Tour", 
-    desc: "Khám phá cảnh quan thiên nhiên qua ống kính máy ảnh",
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-04-12", time: "05:00", 
-    location: "Vườn quốc gia Ba Vì", 
-    color: "bg-green-700", 
-    price: "600.000đ", 
-  },
-  // --- THÁNG 5/2026 ---
-  { 
-    id: 67, 
-    title: "Lễ hội Quốc tế Lao động Việt-Xô", 
-    desc: "Lễ hội kỷ niệm ngày Quốc tế Lao động với sự tham gia của các nghệ sĩ và đoàn nghệ thuật từ Việt Nam và Nga",
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-05-01", time: "09:00", 
-    location: "Công viên Thống Nhất", 
-    color: "bg-red-500", 
-    price: "Miễn phí",
-  },
-  { 
-    id: 68, 
-    title: "Bootcamp: Data Science & AI", 
-    desc: "Khóa học ngắn hạn về Data Science và AI",
-    category: "Hội thảo & Workshop",
-    date: "2026-05-02", time: "14:00", 
-    location: "VNU-IS", 
-    color: "bg-blue-600", 
-    price: "Miễn phí" },
-  { 
-    id: 69, 
-    title: "Những Thành Phố Mơ Màng: Indie Night", 
-    desc: "Biểu diễn âm nhạc indie tại nhà hát Hòa Bình",
-    category: "Giải trí",
-    date: "2026-05-03", time: "19:00", 
-    location: "Nhà hát Hòa Bình", 
-    color: "bg-emerald-300", 
-    price: "500.000đ" },
-  { 
-    id: 70, 
-    title: "Giải Marathon TP.HCM (HCMC Run)", 
-    desc: "Giải marathon tại TP.HCM",
-    category: "Thể thao",
-    date: "2026-05-04", time: "04:00", 
-    location: "Quận 1", 
-    color: "bg-blue-500", 
-    price: "600.000đ" },
-  { 
-    id: 71, 
-    title: "Hội thảo: AI Transform in Fintech", 
-    desc: "Hội thảo về ứng dụng AI trong tài chính",
-    category: "Hội thảo & Workshop",
-    date: "2026-05-06", time: "09:00", 
-    location: "Lotte Center", 
-    color: "bg-indigo-400", 
-    price: "300.000đ" },
-  { 
-    id: 72, 
-    title: "Workshop: Macaron Making Masterclass", 
-    desc: "Khóa học làm bánh macaron chuyên nghiệp",
-    category: "Hội thảo & Workshop",
-    date: "2026-05-08", time: "15:00", 
-    location: "Bakery School", 
-    color: "bg-pink-200", 
-    price: "450.00０đ" },
-  { 
-    id: 73, 
-    title: "Đại hội Thể thao Sinh viên VNU", 
-    desc: "Đại hội thể thao dành cho sinh viên VNU",
-    category: "Thể thao",
-    date: "2026-₀5-1₀", time: "₀7:₀₀", 
-    location: "Sân vận động Bách Khoa", 
-    color: "bg-yellow-5₀₀", 
-    price: "Miễn phí" },
-  { 
-    id: 74, 
-    title: "Workshop: Kỹ năng Thuyết trình AI", 
-    desc: "Khóa học nâng cao kỹ năng thuyết trình về AI",
-    category: "Hội thảo & Workshop",
-    date: "2026-05-12", time: "18:30", 
-    location: "Toong Coworking", 
-    color: "bg-purple-400", 
-    price: "150.000đ", 
-  },
-  { 
-    id: 75, 
-    title: "Triển lãm: VIETNAM ICTCOMM 2026", 
-    desc: "Triển lãm công nghệ thông tin và truyền thông lớn nhất Việt Nam",
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-05-15", time: "09:00", 
-    location: "NIC Hòa Lạc", 
-    color: "bg-cyan-500", 
-    price: "Miễn phí", 
-  },
-  { 
-    id: 76, 
-    title: "Phòng trà: Tình ca Trịnh Công Sơn", 
-    desc: "Đêm nhạc tình ca Trịnh Công Sơn tại phòng trà Không Tên",
-    category: "Nhạc sống",
-    date: "2026-05-16", 
-    time: "20:00", 
-    location: "Phòng trà Không Tên", 
-    color: "bg-amber-600", 
-    price: "600.000đ", 
-  },
-  { 
-    id: 77, 
-    title: "Workshop: Vẽ Henna & Boho Style", 
-    desc: "Trải nghiệm vẽ henna và phong cách boho",
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-05-17", 
-    time: "14:00", 
-    location: "Bohemian Cafe", 
-    color: "bg-orange-400", 
-    price: "200.000đ", 
-  },
-  { 
-    id: 78, 
-    title: "Giải Cầu lông mở rộng 2026", 
-    desc: "Giải đấu cầu lông mở rộng",
-    category: "Thể thao",
-    date: "2026-05-19", 
-    time: "08:00", 
-    location: "CLB thể thao Hoàn Kiếm", 
-    color: "bg-blue-400", 
-    price: "100.000đ", 
-  },
-  { 
-    id: 79, 
-    title: "Vietnam Marketing Summit 2026", 
-    desc: "Hội thảo marketing tại Việt Nam",
-    category: "Hội thảo & Workshop",
-    date: "2026-05-20", 
-    time: "09:00", 
-    location: "JW Marriott Hanoi", 
-    color: "bg-slate-800", 
-    price: "2.000.000đ", 
-  },
-  { 
-    id: 80, 
-    title: "Workshop: Terrarium Art Workshop", 
-    desc: "Khóa học nghệ thuật terrarium",
-    category: "Hội thảo & Workshop",
-    date: "2026-05-22", 
-    time: "10:00", 
-    location: "Green Garden", 
-    color: "bg-green-400", 
-    price: "350.000đ", 
-  },
-  { 
-    id: 81, 
-    title: "Show: Fashion Walk Summer Vibe", 
-    desc: "Chương trình thời trang mùa hè",
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-05-25", 
-    time: "19:30", 
-    location: "Phố đi bộ", 
-    color: "bg-fuchsia-400", 
-    price: "Vào cửa tự do", 
-  },
-  { 
-    id: 82, 
-    title: "Giải Đua thuyền rồng Hồ Tây", 
-    desc: "Giải đấu thuyền rồng",
-    category: "Thể thao",
-    date: "2026-05-28", 
-    time: "08:00", 
-    location: "Hồ Tây", 
-    color: "bg-red-400", 
-    price: "Miễn phí", 
-  },
-  { 
-    id: 83, 
-    title: "VNU Seminar: Tâm lý học Sinh viên", 
-    desc: "Hội thảo về tâm lý học dành cho sinh viên VNU",
-    category: "Hội thảo & Workshop",
-    date: "2026-05-25", time: "14:00", 
-    location: "VNU Library Hall", 
-    color: "bg-teal-500", price: "Miễn phí", 
-  },
-  { 
-    id: 84, 
-    title: "Workshop: DIY Leather Craft", 
-    desc: "Khóa học thủ công da thủ công",
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-05-27", 
-    time: "15:00", 
-    location: "Craft Shop", 
-    color: "bg-stone-500", 
-    price: "550.000đ", 
-  },
-  { 
-    id: 85, 
-    title: "Concert: Chillies - Trên Những Đám Mây", 
-    desc: "Đêm nhạc của ban nhạc Chillies",
-    category: "Nhạc sống",
-    date: "2026-05-29", 
-    time: "19:00", 
-    location: "Nhà thi đấu Quân khu 7", 
-    color: "bg-sky-400", 
-    price: "700.000đ", 
-  },
-  { 
-    id: 86, 
-    title: "Lễ bế giảng năm học VNU-IS", 
-    desc: "Lễ bế giảng năm học dành cho sinh viên VNU-IS",
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-05-31", 
-    time: "08:00", 
-    location: "Hội trường lớn VNU", 
-    color: "bg-indigo-500", 
-    price: "Miễn phí", 
-  },
-  { 
-    id: 87, 
-    title: "Workshop: Tarot & Crystal Healing", 
-    desc: "Khóa học tarot và chữa lành bằng đá",
-    category: "Hội thảo & Workshop",
-    date: "2026-05-05", 
-    time: "18:00", 
-    location: "Mystic House", 
-    color: "bg-purple-900", 
-    price: "300.000đ",
-  },
-  { 
-    id: 88, 
-    title: "Giải Bóng đá mini Business Cup", 
-    desc: "Giải đấu bóng đá mini",
-    category: "Thể thao",
-    date: "2026-05-09", 
-    time: "16:00", 
-    location: "Sân bóng cỏ nhân tạo", 
-    color: "bg-green-500", 
-    price: "150.000đ", 
-  },
-  { 
-    id: 89, 
-    title: "Lớp học: K-pop Dance Cover", 
-    desc: "Khóa học khiêu vũ K-pop",
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-05-07", 
-    time: "19:00", 
-    location: "Dance Studio Q3", 
-    color: "bg-yellow-400", 
-    price: "120.000đ",
-  },
-  { 
-    id: 90, 
-    title: "Hội thảo: Đầu tư Crypto cho người mới", 
-    desc: "Hội thảo về đầu tư crypto cho người mới",
-    category: "Hội thảo & Workshop",
-    date: "2026-05-21", time: "14:00", 
-    location: "Hội sở Ngân hàng số", 
-    color: "bg-blue-900", 
-    price: "Miễn phí", 
-  },
-  { 
-    id: 91, 
-    title: "Skincare Masterclass by Shiseido", 
-    desc: "Khóa học chăm sóc da của Shiseido",
-    category: "Hội thảo & Workshop",
-    date: "2026-05-26", time: "15:00", 
-    location: "Showroom Mỹ phẩm", 
-    color: "bg-pink-300", 
-    price: "Miễn phí", 
-  },
-  { 
-    id: 92, 
-    title: "Đêm nhạc Jazz Mùa hạ: Sunny", 
-    desc: "Đêm nhạc Jazz Mùa hạ",
-    category: "Nhạc sống",
-    date: "2026-05-30", 
-    time: "20:30", 
-    location: "Bình Minh Jazz Club", 
-    color: "bg-gray-800", 
-    price: "450.000đ",
-  },
-  { 
-    id: 93, 
-    title: "Workshop: Mosaic Art for Beginners", 
-    desc: "Khóa học nghệ thuật mosaic cho người mới",
-    category: "Hội thảo & Workshop",
-    date: "2026-05-07", 
-    time: "09:00", 
-    location: "Creative Lab", 
-    color: "bg-orange-500", 
-    price: "420.000đ",
-  },
-  { 
-    id: 94, 
-    title: "Saigon Craft Beer Festival", 
-    desc: "Lễ hội bia thủ công Sài Gòn",
-    category: "Ẩm thực & Đồ uống",
-    date: "2026-05-15", 
-    time: "17:00", 
-    location: "Quận 1", 
-    color: "bg-yellow-700", 
-    price: "250.000đ" },
-  { 
-    id: 95, 
-    title: "Workshop: Creative Writing 101", 
-    desc: "Khóa học viết sáng tạo cơ bản",
-    category: "Hội thảo & Workshop",
-    date: "2026-05-07", 
-    time: "18:00", 
-    location: "Book Cafe", 
-    color: "bg-blue-200", 
-    price: "150.000đ",
-  },
-  { 
-    id: 96, 
-    title: "VPBank Midnight Run Hoàn Kiếm", 
-    desc: "Chạy đêm tại hồ Hoàn Kiếm",
-    category: "Thể thao",
-    date: "2026-05-07", 
-    time: "23:00",
-    location: "Bờ Hồ Hoàn Kiếm", 
-    color: "bg-lime-400", 
-    price: "750.000đ",
-  },
-  { 
-    id: 92, 
-    title: "Đêm nhạc Jazz Mùa hạ: Sunny", 
-    desc: "Đêm nhạc Jazz Mùa hạ với sự tham gia của nhiều nghệ sĩ jazz nổi tiếng",
-    category: "Nhạc sống",
-    date: "2026-05-30", time: "20:30", 
-    location: "Bình Minh Jazz Club", 
-    color: "bg-gray-800", 
-    price: "450.000đ", 
-  },
-  { 
-    id: 93, 
-    title: "Workshop: Mosaic Art for Beginners",
-    desc: "Khóa học nghệ thuật mosaic dành cho người mới bắt đầu",
-    category: "Hội thảo & Workshop", 
-    date: "2026-05-07", 
-    time: "09:00", 
-    location: "Creative Lab", 
-    color: "bg-orange-500", 
-    price: "420.000đ", 
-  },
-  { 
-    id: 94, 
-    title: "Saigon Craft Beer Festival", 
-    desc: "Lễ hội bia thủ công tại Sài Gòn với nhiều loại bia độc đáo",
-    category: "Ẩm thực & Đồ uống",
-    date: "2026-05-15", 
-    time: "17:00", 
-    location: "Quận 1", 
-    color: "bg-yellow-700", 
-    price: "250.000đ", 
-  },
-  { 
-    id: 95, 
-    title: "Workshop: Creative Writing 101", 
-    desc: "Khóa học viết sáng tạo cơ bản",
-    category: "Hội thảo & Workshop",
-    date: "2026-05-07", 
-    time: "18:00", 
-    location: "Book Cafe", 
-    color: "bg-blue-200", 
-    price: "150.000đ",
-  },
-  { 
-    id: 96, 
-    title: "VPBank Midnight Run Hoàn Kiếm", 
-    desc: "Chạy đêm tại hồ Hoàn Kiếm",
-    category: "Thể thao",
-    date: "2026-05-07", 
-    time: "23:00", 
-    location: "Bờ Hồ Hoàn Kiếm", 
-    color: "bg-lime-400", 
-    price: "750.000đ", 
-  },
-  { 
-    id: 97, 
-    title: "Seminar: Web3 & Metaverse Strategy", 
-    desc: "Hội thảo về chiến lược Web3 và Metaverse", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-05-18", 
-    time: "09:00", 
-    location: "VNU-IS Building", 
-    color: "bg-violet-700", 
-    price: "Miễn phí" 
-  },
-  { 
-    id: 98, 
-    title: "Workshop: Textile Design - Vẽ trên vải", 
-    desc: "Khóa học thiết kế vải và vẽ tranh trên vải", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-05-04", 
-    time: "14:30", 
-    location: "Tiệm May Nghệ Thuật", 
-    color: "bg-cyan-300", 
-    price: "280.000đ" 
-  },
-  { 
-    id: 99, 
-    title: "Show: Xiếc Nghệ Thuật 'Làng Tôi'", 
-    desc: "Buổi biểu diễn xiếc nghệ thuật 'Làng Tôi'", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-05-28", 
-    time: "19:00", 
-    location: "Rạp xiếc Trung ương", 
-    color: "bg-red-700", 
-    price: "200.000đ" 
-  },
-  { 
-    id: 100, 
-    title: "Hội chợ Đồ chơi & Trải nghiệm Kid", 
-    desc: "Hội chợ đồ chơi và trải nghiệm dành cho trẻ em", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-05-31", 
-    time: "09:00", 
-    location: "Cung Thiếu Nhi Hà Nội", 
-    color: "bg-blue-400", 
-    price: "Miễn phí", 
-  },
-  { 
-    id: 103, 
-    title: "Workshop: Night Makeup Look", 
-    desc: "Khóa học trang điểm đêm", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-05-08", 
-    time: "18:00", 
-    location: "Makeup Academy", 
-    color: "bg-pink-500", 
-    price: "350.000đ" 
-  },
-  { 
-    id: 104, 
-    title: "Lễ hội Diều Quốc tế Sông Hồng", 
-    desc: "Lễ hội diều quốc tế trên sông Hồng", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-05-01", 
-    time: "15:00", 
-    location: "Bãi giữa Sông Hồng", 
-    color: "bg-sky-500", 
-    price: "Miễn phí" 
-  },
-  { 
-    id: 105, 
-    title: "Workshop: Podcast Production 101", 
-    desc: "Khóa học sản xuất podcast cơ bản", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-05-24", 
-    time: "14:00", 
-    location: "Studio Hub", 
-    color: "bg-rose-600", 
-    price: "300.000đ" 
-  },
-  { 
-    id: 106, 
-    title: "Giao hưởng: Thu quyến rũ", 
-    desc: "Buổi giao hưởng mùa thu quyến rũ", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-05-10", 
-    time: "20:00", 
-    location: "Nhà hát Lớn Hà Nội", 
-    color: "bg-amber-800", 
-    price: "1.000.000đ" 
-  },
-  // --- THÁNG 6/2026 ---
-  { 
-    id: 107, 
-    title: "Summer Tech Camp for Student", 
-    desc: "Khóa học công nghệ mùa hè cho sinh viên", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-01", 
-    time: "08:00", 
-    location: "Hòa Lạc Hi-Tech Park", 
-    color: "bg-blue-600", 
-    price: "2.500.000đ" 
-  },
-  { 
-    id: 108, 
-    title: "International Children's Day Fest", 
-    desc: "Lễ hội ngày trẻ em quốc tế", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-01", 
-    time: "16:00", 
-    location: "Công viên Thủ Lệ", 
-    color: "bg-pink-400", 
-    price: "Miễn phí" 
-  },
-  { 
-    id: 109, 
-    title: "Workshop: NFT Strategy for Artists", 
-    desc: "Khóa học chiến lược NFT cho nghệ sĩ", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-03", 
-    time: "14:00", 
-    location: "VNU-IS Hall", 
-    color: "bg-indigo-500", 
-    price: "Miễn phí" 
-  },
-  { 
-    id: 110, 
-    title: "Music Show: Summer Hit Countdown", 
-    desc: "Buổi biểu diễn âm nhạc mùa hè", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-05", 
-    time: "19:30", 
-    location: "Phố đi bộ Hồ Gươm", 
-    color: "bg-orange-500", 
-    price: "Vào cửa tự do" 
-  },
-  { 
-    id: 111, 
-    title: "The Color Run Vietnam 2026", 
-    desc: "Cuộc thi chạy màu Việt Nam 2026", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-07", 
-    time: "06:00", 
-    location: "Khu đô thị Sala", 
-    color: "bg-fuchsia-500", 
-    price: "350.000đ" 
-  },
-  { 
-    id: 112, 
-    title: "Workshop: Video Editing for TikTok", 
-    desc: "Khóa học biên tập video cho TikTok", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-08", 
-    time: "18:30", 
-    location: "Online via Zoom", 
-    color: "bg-black", 
-    price: "150.000đ" 
-  },
-  { 
-    id: 113, 
-    title: "Triển lãm: Food & Hotel Vietnam", 
-    desc: "Triển lãm thực phẩm và khách sạn Việt Nam", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-10", 
-    time: "09:00", 
-    location: "SECC Quận 7", 
-    color: "bg-emerald-600", 
-    price: "100.000đ" 
-  },
-  { 
-    id: 114, 
-    title: "Hội thảo: Crypto Mastery for Gen Z", 
-    desc: "Hội thảo về kỹ năng crypto cho thế hệ Gen Z", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-12", 
-    time: "15:00", 
-    location: "Hội sở MB Bank", 
-    color: "bg-yellow-600", 
-    price: "Miễn phí" 
-  },
-  { 
-    id: 115, 
-    title: "Workshop: Ceramic Art & Craft", 
-    desc: "Khóa học nghệ thuật và thủ công gốm sứ", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-13", 
-    time: "09:30", 
-    location: "Tiệm Gốm Nhà Mình", 
-    color: "bg-stone-400", 
-    price: "400.000đ" 
-  },
-  { 
-    id: 116, 
-    title: "Giải Bóng đá Summer Cup VNU", 
-    desc: "Giải bóng đá mùa hè VNU", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-14", time: "16:30", 
-    location: "Sân bóng cỏ nhân tạo", 
-    color: "bg-green-600", 
-    price: "Miễn phí", 
-  },
-  { 
-    id: 118, 
-    title: "Workshop: Design Thinking Bootcamp", 
-    desc: "Khóa học tư duy thiết kế", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-18", 
-    time: "09:00", 
-    location: "Dreamplex Coworking", 
-    color: "bg-cyan-500", 
-    price: "300.000đ", 
-  },
-  { 
-    id: 119, 
-    title: "Bảo tàng chiêm tinh học", 
-    desc: "Triển lãm chiêm tinh học", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-19", 
-    time: "08:00", 
-    location: "Hoà Lạc, Hà Nội", 
-    color: "bg-amber-500", 
-    price: "150.000đ", 
-  }, // Giữ nguyên
-  { 
-    id: 120, 
-    title: "Trải nghiệm: Chèo Sup ngắm bình minh", 
-    desc: "Trải nghiệm chèo sup ngắm bình minh", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-21", 
-    time: "05:00", 
-    location: "Hồ Tây", 
-    color: "bg-sky-400", 
-    price: "250.000đ", 
-  },
-  { 
-    id: 124, 
-    title: "Workshop: Natural Skincare DIY", 
-    desc: "Khóa học chăm sóc da tự nhiên", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-27", 
-    time: "10:00", 
-    location: "Lab Studio", 
-    color: "bg-rose-300", 
-    price: "450.000đ" 
-  },
-  { 
-    id: 125, 
-    title: "Hội chợ: Thai Consumer Expo 2026", 
-    desc: "Hội chợ tiêu dùng Thái Lan 2026", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-28", 
-    time: "08:30", 
-    location: "Trung tâm Triển lãm", 
-    color: "bg-red-400", 
-    price: "Miễn phí" 
-  },
-  { 
-    id: 126, 
-    title: "Workshop: Personal Finance 101", 
-    desc: "Khóa học tài chính cá nhân cơ bản", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-30", 
-    time: "18:00", 
-    location: "VNU Library Hall", 
-    color: "bg-indigo-700", 
-    price: "Miễn phí" 
-  },
-  { 
-    id: 127, 
-    title: "Lớp học: Bơi sải nâng cao", 
-    desc: "Lớp học bơi sải nâng cao", 
-    category: "Hội thảo & Workshop", 
-    date: "2026-06-02", 
-    time: "06:00", 
-    location: "Bể bơi Mỹ Đình", 
-    color: "bg-blue-300", 
-    price: "200.000đ" 
-  },
-  { 
-    id: 128, 
-    title: "Workshop: Modern Acrylic Painting", 
-    desc: "Khóa học vẽ acrylic hiện đại", 
-    category: "Hội thảo & Workshop", 
-    date:  "2026-06-06", time: "14:30",
-    location: "Canvas Studio", 
-    color: "bg-yellow-400", 
-    price: "320.000đ", 
-  },
-  { 
-    id: 130, 
-    title: "Khóa học: Yoga Harmony Summer", 
-    desc: "Khóa học yoga mùa hè", 
-    category: "Hội thảo & Workshop",
-    date: "2026-06-15", time: "17:30", 
-    location: "CLB Sức Sống Mới", 
-    color: "bg-green-400", 
-    price: "800.000đ",
-  },
-  { 
-    id: 131, 
-    title: "Hội thảo: Generative AI in Art", 
-    desc: "Hội thảo về AI tạo sinh trong nghệ thuật", 
-    category: "Hội thảo & Workshop",
-    date: "2026-06-23", time: "14:00", 
-    location: "Bảo tàng Mỹ thuật", 
-    color: "bg-stone-800",
-    price: "100.000đ",
-  },
-  { 
-    id: 132, 
-    title: "Workshop: Basic PC Build & Fix", 
-    desc: "Khóa học lắp ráp và sửa chữa PC cơ bản", 
-    category: "Hội thảo & Workshop",
-    date: "2026-06-25", 
-    time: "09:00", 
-    location: "VNU IT Center", 
-    color: "bg-zinc-500", 
-    price: "Miễn phí" 
-  },
-  { 
-    id: 133, 
-    title: "Giao hưởng: Giai điệu mùa hạ", 
-    desc: "Buổi giao hưởng với chủ đề giai điệu mùa hạ", 
-    category: "Hội thảo & Workshop",
-    date: "2026-06-29", 
-    time: "20:00", 
-    location: "Nhà hát Kịch Hà Nội", 
-    color: "bg-amber-900", 
-    price: "300.000đ" 
-  },
-  { 
-    id: 134, 
-    title: "Giải chạy: Sức Trẻ Việt Nam", 
-    desc: "Giải chạy dành cho thanh niên Việt Nam", 
-    category: "Hội thảo & Workshop",
-    date: "2026-06-04", 
-    time: "05:30", 
-    location: "Công viên Yên Sở", 
-    color: "bg-emerald-400", 
-    price: "Miễn phí" 
-  },
-  { 
-    id: 135, 
-    title: "Workshop: iPhone Photography Tour", 
-    desc: "Khóa học chụp ảnh bằng iPhone", 
-    category: "Hội thảo & Workshop",
-    date:  "2026-06-11", 
-    time: "15:00", 
-    location: "Đường Phan Đình Phùng", 
-    color: "bg-gray-700", 
-    price: "200.000đ" 
-  },
-  { 
-    id: 136, 
-    title: "Hội thảo: Du học Châu Âu 2026", 
-    desc: "Hội thảo về du học Châu Âu", 
-    category: "Hội thảo & Workshop",
-    date: "2026-06-17", 
-    time: "08:30", 
-    location: "Khách sạn Pullman", 
-    color: "bg-blue-800", 
-    price: "Miễn phí" 
-  },
-  // --- THÁNG 7/2026 ---
-  { 
-    id: 137, 
-    title: "8Wonder Summer: World Class Music", 
-    desc: "Lễ hội âm nhạc đẳng cấp thế giới", 
-    category: "Nhạc sống",
-    date: "2026-07-01", time: "19:00", 
-    location: "VinWonders Nha Trang", 
-    color: "bg-red-500", 
-    price: "800.000đ", 
-  },
-  { 
-    id: 138, 
-    title: "Live Acoustic: Chuyện của Nắng", 
-    desc: "Buổi biểu diễn acoustic với chủ đề Chuyện của Nắng", 
-    category: "Nhạc sống",
-    date: "2026-07-03", 
-    time: "20:30", 
-    location: "Lululola Coffee+", 
-    color: "bg-orange-400", 
-    price: "350.000đ",
-  },
-  { 
-    id: 139, 
-    title: "Trải nghiệm: Làng Gốm Bát Tràng Tour", 
-    desc: "Trải nghiệm với làng gốm Bát Tràng", 
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-07-04", 
-    time: "09:00", 
-    location: "Bát Tràng, Hà Nội", 
-    color: "bg-stone-500", 
-    price: "450.000đ",
-  },
-  { 
-    id: 140, 
-    title: "Summer Splash Swim Championship", 
-    desc: "Giải bơi mùa hè", 
-    category: "Thể thao",
-    date: "2026-07-05", 
-    time: "07:30", 
-    location: "Cung dưới nước", 
-    color: "bg-blue-400", 
-    price: "150.000đ", 
-  },
-  { 
-    id: 141, 
-    title: "Jazz Night: Midnight Blues", 
-    desc: "Đêm nhạc jazz với chủ đề Midnight Blues", 
-    category: "Nhạc sống",
-    date: "2026-07-07", 
-    time: "21:00", 
-    location: "Bình Minh Jazz Club", 
-    color: "bg-indigo-900", 
-    price: "500.000đ",
-  },
-  { 
-    id: 142, 
-    title: "Tour: Địa đạo Củ Chi - Di sản thép", 
-    desc: "Tour tham quan địa đạo Củ Chi", 
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-07-10", 
-    time: "08:00", 
-    location: "Củ Chi, TP.HCM", 
-    color: "bg-emerald-700", 
-    price: "600.000đ", 
-  },
-  { 
-    id: 143, 
-    title: "Workshop: Vẽ tranh En Plein Air", 
-    date: "2026-07-11", 
-    time: "16:00", 
-    location: "Công viên Yên Sở", 
-    color: "bg-teal-400", 
-    price: "300.000đ",
-  },
-  { 
-    id: 144, 
-    title: "Rock Concert: Lửa Mùa Hè 2026", 
-    date: "2026-07-12", 
-    time: "19:00", 
-    location: "Nhà thi đấu Phú Thọ", 
-    color: "bg-gray-900", 
-    price: "400.000đ" 
-  },
-  { 
-    id: 145, 
-    title: "Giải Tennis VNU Open 2026", 
-    desc: "Giải tennis mở rộng VNU", 
-    category: "Thể thao",
-    date: "2026-07-14", 
-    time: "08:00", 
-    location: "Cụm sân Tennis VNU", 
-    color: "bg-lime-500", 
-    price: "Miễn phí", 
-  },
-  { 
-    id: 146, 
-    title: "Workshop: Mixology - Cocktail Art", 
-    desc: "Khóa học pha chế cocktail", 
-    category: "Hội thảo & Workshop",
-    date: "2026-07-15", 
-    time: "18:00", 
-    location: "The Alchemist Bar", 
-    color: "bg-pink-600", 
-    price: "550.000đ", 
-  },
-  {
-    id: 147, 
-    title: "Hard Rock Indie Night: Vol 1", 
-    desc: "Đêm nhạc hard rock indie", 
-    category: "Nhạc sống",
-    date: "2026-07-17", 
-    time: "20:00", 
-    location: "Hard Rock Cafe", 
-    color: "bg-fuchsia-700", 
-    price: "250.000đ", 
-  },
-  { 
-    id: 148, 
-    title: "Streetball Championship 3x3", 
-    desc: "Giải bóng rổ đường phố", 
-    category: "Thể thao",
-    date: "2026-07-18", 
-    time: "17:00", 
-    location: "Sân bóng rổ ĐH Y", 
-    color: "bg-orange-600", 
-    price: "Miễn phí", 
-  },
-  { 
-    id: 149, 
-    title: "Tour đêm: Sống lại hào khí Hỏa Lò", 
-    desc: "Tour tham quan di tích Hỏa Lò", 
-    category: "Tham quan & Trải nghiệm",
-    date: "2026-07-19", 
-    time: "19:30", 
-    location: "Di tích Hỏa Lò", 
-    color: "bg-zinc-800", 
-    price: "300.000đ", 
-  },
-  { 
-    id: 150, 
-    title: "Workshop: Modern Hand Embroidery",
-    desc: "Khóa học thêu tay hiện đại",
-    category: "Hội thảo & Workshop", 
-    date: "2026-07-21", 
-    time: "14:00", 
-    location: "Tiệm Thêu Tay", 
-    color: "bg-rose-300", 
-    price: "280.000đ",
-  },
-  { 
-    id: 151, 
-    title: "Đêm nhạc Trịnh: Hạ Trắng & Mưa",
-    desc: "Đêm nhạc Trịnh: Hạ Trắng & Mưa",
-    category: "Nhạc sống",
-    date: "2026-07-22", 
-    time: "20:00", 
-    location: "Phòng trà Đồng Dao", 
-    color: "bg-amber-700", 
-    price: "450.000đ", 
-  },
-  { 
-    id: 152, 
-    title: "Run for Love: Hanoi Summer Race",
-    desc: "Cuộc đua vì tình yêu tại Hà Nội mùa hè",
-    category: "Thể thao",
-    date: "2026-07-24", 
-    time: "04:30", 
-    location: "Hồ Tây", 
-    color: "bg-sky-500", 
-    price: "500.000đ", 
-  },
-  { 
-    id: 153, 
-    title: "Workshop: Terrarium Art Design",
-    desc: "Khóa học thiết kế nghệ thuật terrarium",
-    category: "Hội thảo & Workshop", 
-    date: "2026-07-25", 
-    time: "10:00", 
-    location: "Green Oasis Lab", 
-    color: "bg-green-600", 
-    price: "420.000đ", 
-  },
-  { 
-    id: 154, 
-    title: "Acoustic Beach Party: Vũng Tàu",
-    desc: "Bữa tiệc âm nhạc acoustic trên bãi biển Vũng Tàu",
-    category: "Nhạc sống", 
-    date: "2026-07-26", 
-    time: "19:00", 
-    location: "Beach Club Vũng Tàu", 
-    color: "bg-cyan-400", 
-    price: "300.000đ", 
-  },
-  { 
-    id: 155, 
-    title: "Giải Cầu lông Cầu Giấy mở rộng",
-    desc: "Giải cầu lông mở rộng tại Cầu Giấy",
-    category: "Thể thao",
-    date: "2026-07-28", 
-    time: "08:00", 
-    location: "Nhà thi đấu Cầu Giấy", 
-    color: "bg-yellow-500", 
-    price: "100.000đ",
-  },
-  { 
-    id: 156, 
-    title: "Workshop: Scented Candle Making", 
-    desc: "Khóa học làm nến thơm",
-    category: "Hội thảo & Workshop",
-    date: "2026-07-29", 
-    time: "15:00", 
-    location: "The Candle Shop", 
-    color: "bg-violet-400", 
-    price: "380.000đ",
-  },
+  //---Tháng 7/2026---//
   {
     id: 157,
     title: "Triển lãm Harry Potter: Trải nghiệm phép thuật",
@@ -1649,9 +544,8 @@ let events = [
     price: "200.000đ",
     hot: true,
     img: "harrypotter.jpeg",
-  }, // Giữ nguyên
+  },
   {
-    id: 158,
     title: "Bảo tàng chiêm tinh học",
     desc: "Khám phá vũ trụ",
     category: "Tham quan & Trải nghiệm",
@@ -1690,130 +584,124 @@ function renderEvents(filter = "all") {
       </div>
     `;
   });
+
+filtered.forEach(e => {
+  list.innerHTML += `
+    <div class="card" onclick="handleClick(${e.id})">
+      
+      <div class="card-img">
+        <img src="${e.img}">
+        ${e.hot ? `<div class="tag">HOT</div>` : ""}
+      </div>
+
+      <div class="info">
+        <h4>${e.title}</h4>
+        <div class="meta">${e.date} • ${e.location}</div>
+
+        <div class="bottom">
+          <span class="price">${e.price}</span>
+          <button class="buy-btn" onclick="event.stopPropagation()">Mua vé</button>
+        </div>
+
+      </div>
+    </div>
+  `;
+});
 }
 
 // ===== HOT =====
-function renderHot() {
-  let hotList = document.getElementById("hotList");
-  hotList.innerHTML = "";
-
-  events.filter(e => e.hot).forEach(e => {
-    hotList.innerHTML += `
-      <div class="card">
-        <img src="${e.img}">
-        <div class="info">
-          <h4>${e.title}</h4>
-        </div>
-      </div>
-    `;
-  });
-}
-
-// ===== SEARCH =====
-document.querySelector(".search-box").addEventListener("input", function () {
-  let keyword = this.value.toLowerCase();
-
-  let filtered = events.filter(e =>
-    e.title.toLowerCase().includes(keyword)
-  );
-
+// --- Cập nhật lại logic Render ---
+function renderEvents(filter = "all") {
   let list = document.getElementById("eventList");
+  if (!list) return;
   list.innerHTML = "";
 
-  filtered.forEach(e => {
-    list.innerHTML += `
-      <div class="card">
-        <img src="${e.img}">
-        <div class="info">
-          <h4>${e.title}</h4>
-        </div>
-      </div>
-    `;
-  });
-});
-
-// ===== FILTER =====
-function applyFilters() {
-  let date = document.getElementById("filterDate").value;
-  let location = document.getElementById("filterLocation").value;
-
+  // Lọc danh sách theo category
   let filtered = events.filter(e =>
-    (!date || e.date === date) &&
-    (!location || e.location === location)
+    filter === "all" || e.category === filter
   );
 
-  let list = document.getElementById("eventList");
-  list.innerHTML = "";
-
   filtered.forEach(e => {
+    // Chỉ render 1 lần duy nhất mỗi card
     list.innerHTML += `
-      <div class="card">
-        <img src="${e.img}">
+      <div class="card" onclick="handleClick(${e.id})">
+        <div class="card-img">
+          <img src="${e.img}" onerror="this.src='https://via.placeholder.com/400x200'">
+          ${e.hot ? `<div class="tag">HOT</div>` : ""}
+        </div>
         <div class="info">
           <h4>${e.title}</h4>
+          <div class="meta">${e.date} • ${e.location}</div>
+          <div class="bottom">
+            <span class="price">${e.price}</span>
+            <button class="buy-btn" onclick="handleBuyClick(event, ${e.id})">Mua vé</button>
+          </div>
         </div>
       </div>
     `;
   });
 }
 
-// ===== MODAL =====
-function openDetail(title, desc) {
-  document.getElementById("modal").style.display = "block";
-  document.getElementById("title").innerText = title;
-  document.getElementById("desc").innerText = desc;
+// --- Hàm xử lý khi nhấn nút "Mua vé" ---
+function handleBuyClick(event, id) {
+  event.stopPropagation(); // Ngăn sự kiện click lan ra thẻ card (tránh mở Modal)
+  
+  let selectedEvent = events.find(ev => ev.id === id);
+  if (!selectedEvent) return;
+
+  // KIỂM TRA: Nếu sự kiện có file riêng (như index.html của 30/4)
+  if (selectedEvent.file) {
+    window.location.href = selectedEvent.file; // Nhảy sang trang intro con rồng
+  } else {
+    // Nếu không có file intro, nhảy sang trang đặt vé mặc định
+    // Truyền ID qua URL để trang sau biết đang mua vé cho sự kiện nào
+    window.location.href = `anhtraisayhi.html?id=${id}`;
+  }
 }
 
-function closeModal() {
-  document.getElementById("modal").style.display = "none";
+// --- Hàm xử lý khi nhấn vào bất kỳ đâu trên card (trừ nút mua vé) ---
+function handleClick(id) {
+  let selectedEvent = events.find(ev => ev.id === id);
+  if (!selectedEvent) return;
+
+  // Nếu là sự kiện 30/4, nhấn vào hình cũng cho xem intro luôn
+  if (selectedEvent.file) {
+    window.location.href = selectedEvent.file;
+  } else {
+    // Hiện modal thông tin chi tiết như cũ
+    openDetail(selectedEvent.title, selectedEvent.desc || "Không có mô tả chi tiết.");
+  }
 }
 
-// ===== LOGIN =====
-function openLogin() {
-  document.getElementById("login").style.display = "block";
-}
-
-function closeLogin() {
-  document.getElementById("login").style.display = "none";
-}
-
-// ===== CREATE EVENT =====
-function openCreateEvent() {
-  document.getElementById("createEventModal").style.display = "block";
-}
-
-function closeCreateEvent() {
-  document.getElementById("createEventModal").style.display = "none";
-}
-
-function createEvent() {
-  let newEvent = {
-    title: document.getElementById("evTitle").value,
-    desc: document.getElementById("evDesc").value,
-    category: document.getElementById("evCategory").value,
-    date: document.getElementById("evDate").value,
-    location: document.getElementById("evLocation").value,
-    price: document.getElementById("evPrice").value,
-    hot: false,
-    img: "https://picsum.photos/400/200?random=" + Math.random()
-  };
-
-  events.push(newEvent);
-
-  renderEvents();
-  closeCreateEvent();
-}
-
-function gotoDetail(title, date, location, price, img) {
-  const url = `anhtraisayhi.html?title=${encodeURIComponent(title)}
-  &date=${encodeURIComponent(date)}
-  &location=${encodeURIComponent(location)}
-  &price=${encodeURIComponent(price)}
-  &img=${encodeURIComponent(img)}`;
-
-  window.location.href = url;
-}
-
-// INIT
+// Đảm bảo gọi lại hàm khởi tạo
 renderEvents();
 renderHot();
+
+// 1. Sửa hàm handleClick: Nhấn vào đâu trên card cũng chạy intro nếu có
+function handleClick(id) {
+  let e = events.find(ev => ev.id === id);
+  if (!e) return;
+
+  if (e.file) {
+    // Nếu có intro (như sự kiện 30/4), chuyển đến index.html
+    window.location.href = e.file;
+  } else {
+    // Event bình thường thì mở modal chi tiết
+    openDetail(e.title, e.desc || "Không có mô tả");
+  }
+}
+
+// 2. Bổ sung hàm handleBuyClick: Đảm bảo nút "Mua vé" hoạt động
+function handleBuyClick(event, id) {
+  event.stopPropagation(); // Ngăn việc mở modal chi tiết khi nhấn nút
+  let e = events.find(ev => ev.id === id);
+  if (!e) return;
+
+  if (e.file) {
+    // Nhấn "Mua vé" của sự kiện 30/4 cũng dẫn vào intro trước
+    window.location.href = e.file;
+  } else {
+    // Các sự kiện khác nhảy thẳng tới trang đặt vé
+    window.location.href = "anhtraisayhi.html";
+  }
+}
