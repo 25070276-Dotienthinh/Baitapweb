@@ -1,84 +1,119 @@
-body { background-color: #0b0b0b; color: #ffffff; font-family: 'Inter', sans-serif; }
-        .category-nav-pastel {
-            background: linear-gradient(90deg, #FFDEE9 0%, #FFFFFF 50%, #B5FFFC 100%);
-            border-radius: 999px;
-        }
-        .ticket-box-style {
-            background: #1a1a1a; position: relative; border-radius: 1.5rem; overflow: hidden;
-        }
-        .ticket-box-style::before, .ticket-box-style::after {
-            content: ""; position: absolute; left: 33.33%; width: 30px; height: 30px;
-            background: #0b0b0b; border-radius: 50%; transform: translateX(-50%); z-index: 10;
-        }
-        .ticket-box-style::before { top: -15px; }
-        .ticket-box-style::after { bottom: -15px; }
+/* --- 1. Reset & Full Screen Setup --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-        .ticket-detail { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; background: #1a1a1a; }
-        .ticket-item.active .ticket-detail { max-height: 500px; }
-        .ticket-item.active .icon-arrow { transform: rotate(180deg); }
-        .content-collapsed { max-height: 200px; overflow: hidden; position: relative; transition: all 0.5s; }
-        .content-collapsed::after {
-            content: ""; position: absolute; bottom: 0; left: 0; width: 100%; height: 80px;
-            background: linear-gradient(transparent, #141414);
-        }
-        .content-expanded { max-height: none; }
-        .content-expanded::after { display: none; }
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-    
-        .description-html-content img {
-            width: 100% !important;
-            max-width: 100%;
-            height: auto !important;
-            display: block;
-            margin: 15px 0;
-            border-radius: 12px;
-        }
+html, body {
+    width: 100%;
+    min-height: 100vh;
+    background-color: #0b0b0b; /* Giữ màu nền đồng nhất */
+}
 
-        .description-html-content iframe {
-            width: 100% !important;
-            aspect-ratio: 16 / 9;
-            border-radius: 16px;
-            margin: 20px 0;
-        }
+body { 
+    color: #ffffff; 
+    font-family: 'Inter', sans-serif; 
+    line-height: 1.6;
+    overflow-x: hidden; /* Ngăn chặn thanh cuộn ngang gây lỗi giao diện */
+    -webkit-font-smoothing: antialiased;
+}
 
-        .description-html-content p {
-            margin-bottom: 15px;
-        }
+/* --- 2. Layout Components --- */
+.category-nav-pastel {
+    background: linear-gradient(90deg, #FFDEE9 0%, #FFFFFF 50%, #B5FFFC 100%);
+    border-radius: 999px;
+    padding: 10px 20px; /* Thêm padding để không dính chữ */
+}
 
-        #event-description {
-            white-space: pre-line;
-        }
+.ticket-box-style {
+    background: #1a1a1a; 
+    position: relative; 
+    border-radius: 1.5rem; 
+    overflow: hidden;
+}
 
-        #event-time {
-            position: relative;
-            pointer-events: auto !important; 
-        }
+/* Các lỗ đục trên vé */
+.ticket-box-style::before, .ticket-box-style::after {
+    content: ""; 
+    position: absolute; 
+    left: 33.33%; 
+    width: 30px; 
+    height: 30px;
+    background: #0b0b0b; /* Phải trùng màu với background body */
+    border-radius: 50%; 
+    transform: translateX(-50%); 
+    z-index: 10;
+}
+.ticket-box-style::before { top: -15px; }
+.ticket-box-style::after { bottom: -15px; }
 
-        #event-time a {
-            display: inline-flex;
-            align-items: center;
-            cursor: pointer !important;
-        }
+/* --- 3. Ticket Animations & Details --- */
+.ticket-detail { 
+    max-height: 0; 
+    overflow: hidden; 
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1); 
+    background: #1a1a1a; 
+}
 
-        .content-expanded { 
-            max-height: 20000px !important; 
-        }
+.ticket-item.active .ticket-detail { 
+    max-height: 1000px; /* Tăng lên để chứa đủ nội dung dài */
+}
 
-        .content-expanded::after { 
-            display: none !important; 
-        }
+.ticket-item.active .icon-arrow { 
+    transform: rotate(180deg); 
+}
 
-        .spinner {
-            width: 40px; height: 40px; border: 4px solid #F33B26;
-            border-top: 4px solid transparent; border-radius: 50%;
-            animation: spin 1s linear infinite;
-        }
-        @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-        
-        /* Hiệu ứng hover cho card gợi ý */
-        .suggestion-card:hover img { transform: scale(1.05); }
+/* Hiệu ứng ẩn bớt nội dung (Read more) */
+.content-collapsed { 
+    max-height: 200px; 
+    overflow: hidden; 
+    position: relative; 
+    transition: all 0.5s ease; 
+}
 
-        /* Nhãn hết vé  */
+.content-collapsed::after {
+    content: ""; 
+    position: absolute; 
+    bottom: 0; 
+    left: 0; 
+    width: 100%; 
+    height: 80px;
+    background: linear-gradient(transparent, #1a1a1a); /* Trùng màu nền ticket-box */
+}
+
+.content-expanded { 
+    max-height: 5000px !important; /* Dùng giá trị lớn thay vì none để có hiệu ứng mượt */
+}
+
+.content-expanded::after { 
+    display: none !important; 
+}
+
+/* --- 4. Content Styles (Images & Videos) --- */
+.description-html-content img {
+    width: 100% !important;
+    max-width: 100%;
+    height: auto !important;
+    display: block;
+    margin: 15px 0; 
+    border-radius: 12px;
+    object-fit: cover;
+}
+
+.description-html-content iframe {
+    width: 100% !important;
+    aspect-ratio: 16 / 9;
+    border-radius: 16px;
+    margin: 20px 0;
+    border: none;
+}
+
+.no-scrollbar::-webkit-scrollbar { 
+    display: none; 
+}
+
+/* --- 5. Status & Badges --- */
 .sold-out-badge {
     background-color: rgba(239, 68, 68, 0.1);
     color: #ef4444;
@@ -91,29 +126,47 @@ body { background-color: #0b0b0b; color: #ffffff; font-family: 'Inter', sans-ser
     letter-spacing: 0.5px;
 }
 
-/* Hiệu ứng mờ cho cả dòng vé khi hết */
 .ticket-sold-out {
     opacity: 0.6;
-    filter: grayscale(0.5);
+    filter: grayscale(0.7);
     cursor: not-allowed !important;
+    pointer-events: none;
 }
 
+/* --- 6. Showtime Styles --- */
 .showtime-item {
     background: rgba(255, 255, 255, 0.03);
     border: 1px solid rgba(255, 255, 255, 0.05);
     border-radius: 1.5rem;
     transition: all 0.3s ease;
 }
+
 .showtime-item.active {
-    border-color: rgba(46, 204, 113, 0.3);
-    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(52, 152, 219, 0.5); /* Đã đổi sang màu xanh dương theo yêu cầu trước */
+    background: rgba(52, 152, 219, 0.05);
 }
+
 .ticket-rows-container {
     max-height: 0;
     overflow: hidden;
-    transition: max-height 0.5s cubic-bezier(0, 1, 0, 1);
+    transition: max-height 0.6s ease-in-out;
 }
+
 .showtime-item.active .ticket-rows-container {
-    max-height: 1000px;
-    transition: max-height 1s ease-in-out;
+    max-height: 2000px;
+}
+
+/* --- 7. Loading Spinner --- */
+.spinner {
+    width: 40px; 
+    height: 40px; 
+    border: 4px solid rgba(243, 59, 38, 0.2);
+    border-top: 4px solid #F33B26; 
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin { 
+    0% { transform: rotate(0deg); } 
+    100% { transform: rotate(360deg); } 
 }
