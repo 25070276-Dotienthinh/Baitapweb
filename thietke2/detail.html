@@ -7,8 +7,14 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <link rel="stylesheet" href="detail.css">
+    <link rel="stylesheet" href="responsive.css">
 </head>
 <body class="pb-20">
+    <div id="dynamic-bg-container" style="position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden;">
+    <video id="dynamic-bg-video" autoplay loop muted playsinline style="width: 100%; height: 100%; object-fit: cover; display: none;"></video>
+    <div id="dynamic-bg-image" style="width: 100%; height: 100%; background-size: cover; background-position: center; display: none;"></div>
+    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.6);"></div>
+</div>
     
    <div id="special-loader" class="fixed inset-0 z-[1000] bg-black flex items-center justify-center">
     <video id="loading-video-player" 
@@ -20,6 +26,7 @@
         <div id="loader-icon" class="mb-4 w-12 h-12 border-4 border-pink-500 border-t-transparent rounded-full animate-spin mx-auto"></div>
         <h2 class="text-white text-2xl font-black uppercase tracking-[0.2em]">Loading Experience</h2>
     </div>
+    
 </div>
 
     <header class="p-6 flex justify-between items-center max-w-[1400px] mx-auto">
@@ -132,7 +139,7 @@
             </div>
 
             <button id="main-booking-btn" onclick="goToBooking()" 
-    class="w-full py-3 bg-[#3498db] text-white rounded-[1.5rem] font-black uppercase text-[10px] tracking-widest shadow-lg transition-all active:scale-95">
+    class="w-full py-3 bg-[#2ecc71] text-white rounded-[1.5rem] font-black uppercase text-[10px] tracking-widest shadow-lg transition-all active:scale-95">
     Mua vé ngay
 </button>
         </div>
@@ -419,4 +426,5 @@
 </script>
     <script src="detail.js"></script>
 </body>
+    
 </html>
