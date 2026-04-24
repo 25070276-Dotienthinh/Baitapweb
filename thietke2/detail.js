@@ -87,6 +87,50 @@
     
     const eventIdStr = String(ev.id);
 
+    const setActiveCategory = (categoryText) => {
+        const navLinks = document.querySelectorAll('.category-nav-pastel a');
+        if (!navLinks.length || !categoryText) return;
+
+        const normalizedCategory = categoryText.trim().toLowerCase();
+        let matched = false;
+
+        navLinks.forEach(link => {
+            const linkText = link.textContent.trim().toLowerCase();
+            const isSame = linkText === normalizedCategory;
+            const isRelated = (
+                (linkText === 'nhạc sống' && normalizedCategory.includes('nhạc')) ||
+                (linkText === 'sân khấu & nghệ thuật' && (normalizedCategory.includes('sân khấu') || normalizedCategory.includes('nghệ thuật'))) ||
+                (linkText === 'thể thao' && normalizedCategory.includes('thể thao')) ||
+                (linkText === 'hội thảo & workshop' && normalizedCategory.includes('hội thảo')) ||
+                (linkText === 'tham quan & trải nghiệm' && (normalizedCategory.includes('tham quan') || normalizedCategory.includes('trải nghiệm')))
+            );
+
+            if (isSame || isRelated) {
+                link.classList.add('text-pink-600', 'font-black');
+                link.classList.remove('text-gray-500', 'hover:text-pink-400');
+                matched = true;
+            } else {
+                link.classList.remove('text-pink-600', 'font-black');
+                link.classList.add('text-gray-500', 'font-bold');
+            }
+        });
+
+        if (!matched) {
+            const navWrapper = document.querySelector('.category-nav-pastel .flex');
+            if (navWrapper) {
+                const customLink = document.createElement('a');
+                customLink.href = '#';
+                customLink.textContent = categoryText;
+                customLink.className = 'text-pink-600 font-black text-xs uppercase';
+                navWrapper.insertBefore(customLink, navWrapper.firstChild);
+            }
+        }
+    };
+
+    if (ev.category) {
+        setActiveCategory(ev.category);
+    }
+
     if (bgVideoMap[eventIdStr]) {
         bgVideo.src = bgVideoMap[eventIdStr];
         bgVideo.style.display = 'block';
