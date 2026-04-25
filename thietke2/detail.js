@@ -431,3 +431,37 @@
 }
 
         window.onload = initEventDetail;
+document.addEventListener('DOMContentLoaded', function() {
+    const filters = document.querySelectorAll('.category-filter');
+    const cards = document.querySelectorAll('.suggestion-card');
+
+    filters.forEach(filter => {
+        filter.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            // 1. Đổi màu chữ cho nút đang được chọn
+            filters.forEach(f => {
+                f.classList.remove('text-pink-600', 'active');
+                f.classList.add('text-gray-500');
+            });
+            this.classList.add('text-pink-600', 'active');
+            this.classList.remove('text-gray-500');
+
+            const filterValue = this.getAttribute('data-filter');
+
+            // 2. Lọc các Card
+            cards.forEach(card => {
+                const cardCategory = card.getAttribute('data-category');
+                
+                if (filterValue === 'all' || cardCategory === filterValue) {
+                    card.style.display = 'block';
+                    // Thêm hiệu ứng hiện ra mượt mà
+                    card.classList.add('animate-in', 'fade-in', 'duration-500');
+                } else {
+                    card.style.display = 'none';
+                    card.classList.remove('animate-in', 'fade-in');
+                }
+            });
+        });
+    });
+});
