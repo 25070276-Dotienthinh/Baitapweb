@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Number Addition Calculator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+    
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 400px;
+    }
+    
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+    
+    .form-group {
+      margin-bottom: 20px;
+    }
+    
+    label {
+      display: block;
+      color: #555;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+    
+    input[type="text"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+    
+    input[type="text"]:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+    }
+    
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 20px;
+    }
+    
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+    
+    button:active {
+      transform: translateY(0);
+    }
+    
+    .error-box {
+      display: none;
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 15px;
+      border: 1px solid #f5c6cb;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+    
+    .error-box.show {
+      display: block;
+    }
+    
+    .result-box {
+      display: none;
+      background-color: #d4edda;
+      color: #155724;
+      padding: 15px;
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
+      text-align: center;
+      font-weight: 600;
+      font-size: 18px;
+    }
+    
+    .result-box.show {
+      display: block;
+    }
+    
+    .result-box span {
+      color: #27ae60;
+      font-size: 24px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Number Addition</h1>
+    
+    <div class="error-box" id="errorBox"></div>
+    <div class="result-box" id="resultBox"></div>
+    
+    <form id="calcForm">
+      <div class="form-group">
+        <label for="num1">Enter First Number:</label>
+        <input type="text" id="num1" placeholder="e.g., 10 or 15.5">
+      </div>
+      
+      <div class="form-group">
+        <label for="num2">Enter Second Number:</label>
+        <input type="text" id="num2" placeholder="e.g., 20 or 25.5">
+      </div>
+      
+      <button type="submit">Calculate Sum</button>
+    </form>
+  </div>
+
+  <script>
+    const calcForm = document.getElementById('calcForm');
+    const num1Input = document.getElementById('num1');
+    const num2Input = document.getElementById('num2');
+    const errorBox = document.getElementById('errorBox');
+    const resultBox = document.getElementById('resultBox');
+    
+    calcForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+      
+      // Hide previous messages
+      errorBox.classList.remove('show');
+      resultBox.classList.remove('show');
+      
+      const num1Str = num1Input.value.trim();
+      const num2Str = num2Input.value.trim();
+      
+      // Validate inputs are not empty
+      if (num1Str === '' || num2Str === '') {
+        showError('❌ Error: Please enter both numbers!');
+        return;
+      }
+      
+      // Try to parse numbers
+      const num1 = parseFloat(num1Str);
+      const num2 = parseFloat(num2Str);
+      
+      // Validate parsed values are valid numbers
+      if (isNaN(num1) || isNaN(num2)) {
+        showError('❌ Error: Please enter valid numbers only!');
+        return;
+      }
+      
+      // Validate no extra non-numeric characters
+      if (!isValidNumber(num1Str) || !isValidNumber(num2Str)) {
+        showError('❌ Error: Invalid number format! Use only digits and decimal points.');
+        return;
+      }
+      
+      // Calculate and display result
+      const sum = num1 + num2;
+      showResult(num1, num2, sum);
+    });
+    
+    function isValidNumber(str) {
+      // Allow digits, decimal point, and negative sign at the start
+      return /^-?\d+(\.\d+)?$/.test(str);
+    }
+    
+    function showError(message) {
+      errorBox.textContent = message;
+      errorBox.classList.add('show');
+    }
+    
+    function showResult(num1, num2, sum) {
+      resultBox.innerHTML = `${num1} + ${num2} = <span>${sum}</span>`;
+      resultBox.classList.add('show');
+    }
+    
+    // Clear error/result when user starts typing
+    [num1Input, num2Input].forEach(input => {
+      input.addEventListener('input', function() {
+        errorBox.classList.remove('show');
+        resultBox.classList.remove('show');
+      });
+    });
+  </script>
+</body>
+</html>

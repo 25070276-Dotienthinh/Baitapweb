@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Month Days Calculator</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      background: white;
+      padding: 40px;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      width: 100%;
+      max-width: 500px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #333;
+      margin-bottom: 30px;
+      font-size: 24px;
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    label {
+      display: block;
+      color: #555;
+      font-weight: 600;
+      margin-bottom: 8px;
+      font-size: 14px;
+    }
+
+    select, input[type="number"] {
+      width: 100%;
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+
+    select:focus, input[type="number"]:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+    }
+
+    button {
+      width: 100%;
+      padding: 12px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+      margin-bottom: 20px;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .error-box {
+      display: none;
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 15px;
+      border: 1px solid #f5c6cb;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-weight: 500;
+    }
+
+    .error-box.show {
+      display: block;
+    }
+
+    .result-box {
+      display: none;
+      background-color: #d4edda;
+      color: #155724;
+      padding: 20px;
+      border: 1px solid #c3e6cb;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      text-align: center;
+    }
+
+    .result-box.show {
+      display: block;
+    }
+
+    .result-text {
+      font-size: 18px;
+      font-weight: 600;
+      margin-bottom: 10px;
+    }
+
+    .result-value {
+      font-size: 24px;
+      font-weight: bold;
+      color: #27ae60;
+    }
+
+    .info-box {
+      background-color: #f8f9fa;
+      padding: 15px;
+      border-radius: 5px;
+      margin-top: 15px;
+      border-left: 4px solid #667eea;
+    }
+
+    .info-box h3 {
+      color: #333;
+      margin-bottom: 10px;
+      font-size: 16px;
+    }
+
+    .info-box p {
+      color: #666;
+      font-size: 14px;
+      margin: 5px 0;
+    }
+
+    .leap-year-info {
+      background-color: #fff3cd;
+      color: #856404;
+      padding: 10px;
+      border-radius: 5px;
+      margin-bottom: 15px;
+      border: 1px solid #ffeaa7;
+      font-weight: 500;
+      display: none;
+    }
+
+    .leap-year-info.show {
+      display: block;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Month Days Calculator</h1>
+
+    <div class="leap-year-info" id="leapYearInfo">
+      📅 <span id="leapYearText"></span>
+    </div>
+
+    <div class="error-box" id="errorBox"></div>
+    <div class="result-box" id="resultBox">
+      <div class="result-text" id="resultText"></div>
+      <div class="result-value" id="resultValue"></div>
+    </div>
+
+    <form id="monthForm">
+      <div class="form-group">
+        <label for="month">Select Month:</label>
+        <select id="month" required>
+          <option value="">Choose a month...</option>
+          <option value="1">January</option>
+          <option value="2">February</option>
+          <option value="3">March</option>
+          <option value="4">April</option>
+          <option value="5">May</option>
+          <option value="6">June</option>
+          <option value="7">July</option>
+          <option value="8">August</option>
+          <option value="9">September</option>
+          <option value="10">October</option>
+          <option value="11">November</option>
+          <option value="12">December</option>
+        </select>
+      </div>
+
+      <div class="form-group">
+        <label for="year">Enter Year:</label>
+        <input type="number" id="year" placeholder="e.g., 2024" min="1" max="9999" required>
+      </div>
+
+      <button type="submit">Calculate Days</button>
+    </form>
+
+    <div class="info-box">
+      <h3>How it works:</h3>
+      <p>• Uses switch statement to determine days per month</p>
+      <p>• February: 28 or 29 days (leap year check)</p>
+      <p>• Leap year: Divisible by 4, but not by 100 unless by 400</p>
+      <p>• Most months: 30 or 31 days</p>
+    </div>
+  </div>
+
+  <script>
+    const monthForm = document.getElementById('monthForm');
+    const monthSelect = document.getElementById('month');
+    const yearInput = document.getElementById('year');
+    const errorBox = document.getElementById('errorBox');
+    const resultBox = document.getElementById('resultBox');
+    const resultText = document.getElementById('resultText');
+    const resultValue = document.getElementById('resultValue');
+    const leapYearInfo = document.getElementById('leapYearInfo');
+    const leapYearText = document.getElementById('leapYearText');
+
+    // Function to check if a year is a leap year
+    function isLeapYear(year) {
+      return (year % 4 === 0 && year % 100 !== 0) || (year % 400 === 0);
+    }
+
+    // Function to get days in month using switch statement
+    function getDaysInMonth(month, year) {
+      let days;
+
+      switch (parseInt(month)) {
+        case 1: // January
+        case 3: // March
+        case 5: // May
+        case 7: // July
+        case 8: // August
+        case 10: // October
+        case 12: // December
+          days = 31;
+          break;
+        case 4: // April
+        case 6: // June
+        case 9: // September
+        case 11: // November
+          days = 30;
+          break;
+        case 2: // February
+          days = isLeapYear(year) ? 29 : 28;
+          break;
+        default:
+          days = 0; // Invalid month
+      }
+
+      return days;
+    }
+
+    // Function to get month name
+    function getMonthName(month) {
+      const months = [
+        '', 'January', 'February', 'March', 'April', 'May', 'June',
+        'July', 'August', 'September', 'October', 'November', 'December'
+      ];
+      return months[parseInt(month)];
+    }
+
+    monthForm.addEventListener('submit', function(e) {
+      e.preventDefault();
+
+      // Hide previous messages
+      errorBox.classList.remove('show');
+      resultBox.classList.remove('show');
+      leapYearInfo.classList.remove('show');
+
+      const month = monthSelect.value;
+      const year = parseInt(yearInput.value);
+
+      // Validate inputs
+      if (!month) {
+        showError('❌ Error: Please select a month!');
+        return;
+      }
+
+      if (!year || year < 1 || year > 9999) {
+        showError('❌ Error: Please enter a valid year (1-9999)!');
+        return;
+      }
+
+      // Calculate days using switch statement
+      const days = getDaysInMonth(month, year);
+      const monthName = getMonthName(month);
+
+      // Show leap year info for February
+      if (parseInt(month) === 2) {
+        const leapStatus = isLeapYear(year) ? 'is a leap year' : 'is not a leap year';
+        leapYearText.textContent = `${year} ${leapStatus}. February has ${days} days.`;
+        leapYearInfo.classList.add('show');
+      }
+
+      // Display result
+      resultText.textContent = `${monthName} ${year} has:`;
+      resultValue.textContent = `${days} days`;
+      resultBox.classList.add('show');
+    });
+
+    function showError(message) {
+      errorBox.textContent = message;
+      errorBox.classList.add('show');
+    }
+
+    // Clear error/result when user changes inputs
+    [monthSelect, yearInput].forEach(input => {
+      input.addEventListener('change', function() {
+        errorBox.classList.remove('show');
+        resultBox.classList.remove('show');
+        leapYearInfo.classList.remove('show');
+      });
+    });
+  </script>
+</body>
+</html>

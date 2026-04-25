@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Multiplication Table</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      min-height: 100vh;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 10px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      text-align: center;
+    }
+
+    h1 {
+      font-size: 28px;
+      margin-bottom: 10px;
+    }
+
+    .subtitle {
+      font-size: 16px;
+      opacity: 0.9;
+    }
+
+    .content {
+      padding: 30px;
+    }
+
+    .controls {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      margin-bottom: 30px;
+      justify-content: center;
+    }
+
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      min-width: 200px;
+    }
+
+    label {
+      font-weight: 600;
+      color: #555;
+      font-size: 14px;
+    }
+
+    input[type="number"], select {
+      padding: 12px;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      font-size: 16px;
+      transition: border-color 0.3s;
+    }
+
+    input[type="number"]:focus, select:focus {
+      outline: none;
+      border-color: #667eea;
+      box-shadow: 0 0 5px rgba(102, 126, 234, 0.3);
+    }
+
+    button {
+      padding: 12px 24px;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      font-weight: 600;
+      cursor: pointer;
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+    }
+
+    button:active {
+      transform: translateY(0);
+    }
+
+    .table-container {
+      margin-top: 30px;
+    }
+
+    .table-title {
+      text-align: center;
+      font-size: 20px;
+      font-weight: 600;
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    /* Single Number Table */
+    .single-table {
+      display: none;
+      max-width: 400px;
+      margin: 0 auto 40px;
+    }
+
+    .single-table.show {
+      display: block;
+    }
+
+    .single-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 12px 20px;
+      border-bottom: 1px solid #eee;
+      transition: background-color 0.2s;
+    }
+
+    .single-row:hover {
+      background-color: #f8f9fa;
+    }
+
+    .single-row:last-child {
+      border-bottom: none;
+    }
+
+    .equation {
+      font-size: 16px;
+      color: #333;
+    }
+
+    .result {
+      font-size: 18px;
+      font-weight: bold;
+      color: #667eea;
+    }
+
+    /* Full Multiplication Table */
+    .full-table {
+      display: none;
+      overflow-x: auto;
+      margin-top: 20px;
+    }
+
+    .full-table.show {
+      display: block;
+    }
+
+    .multiplication-grid {
+      min-width: 600px;
+      border-collapse: collapse;
+      margin: 0 auto;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      border-radius: 8px;
+      overflow: hidden;
+    }
+
+    .multiplication-grid th,
+    .multiplication-grid td {
+      padding: 12px 16px;
+      text-align: center;
+      border: 1px solid #ddd;
+      font-size: 14px;
+    }
+
+    .multiplication-grid th {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      font-weight: 600;
+    }
+
+    .multiplication-grid th:first-child {
+      background: #f8f9fa;
+      color: #333;
+      font-weight: bold;
+    }
+
+    .multiplication-grid td:first-child {
+      background: #f8f9fa;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .multiplication-grid td:hover {
+      background-color: #e3f2fd;
+      transition: background-color 0.2s;
+    }
+
+    .multiplication-grid td.result-cell {
+      background-color: #fff3cd;
+      font-weight: bold;
+      color: #856404;
+    }
+
+    /* Error message */
+    .error-box {
+      display: none;
+      background-color: #f8d7da;
+      color: #721c24;
+      padding: 15px;
+      border: 1px solid #f5c6cb;
+      border-radius: 5px;
+      margin-bottom: 20px;
+      font-weight: 500;
+      text-align: center;
+    }
+
+    .error-box.show {
+      display: block;
+    }
+
+    /* Responsive design */
+    @media (max-width: 768px) {
+      .controls {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .control-group {
+        min-width: 250px;
+        width: 100%;
+      }
+
+      .multiplication-grid {
+        font-size: 12px;
+      }
+
+      .multiplication-grid th,
+      .multiplication-grid td {
+        padding: 8px 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>🧮 Multiplication Table</h1>
+      <p class="subtitle">Learn and practice multiplication with interactive tables</p>
+    </div>
+
+    <div class="content">
+      <div class="error-box" id="errorBox"></div>
+
+      <div class="controls">
+        <div class="control-group">
+          <label for="number">Number for Table:</label>
+          <input type="number" id="number" placeholder="e.g., 5" min="1" max="20">
+        </div>
+
+        <div class="control-group">
+          <label for="range">Table Range:</label>
+          <select id="range">
+            <option value="10">1 to 10</option>
+            <option value="12">1 to 12</option>
+            <option value="20">1 to 20</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label>&nbsp;</label>
+          <button onclick="generateSingleTable()">Generate Table</button>
+        </div>
+
+        <div class="control-group">
+          <label>&nbsp;</label>
+          <button onclick="generateFullTable()">Show Full Table</button>
+        </div>
+      </div>
+
+      <div class="table-container">
+        <div class="single-table" id="singleTable">
+          <div class="table-title" id="singleTableTitle"></div>
+          <div id="singleTableContent"></div>
+        </div>
+
+        <div class="full-table" id="fullTable">
+          <div class="table-title" id="fullTableTitle">Complete Multiplication Table (1-10)</div>
+          <table class="multiplication-grid" id="fullTableContent"></table>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const numberInput = document.getElementById('number');
+    const rangeSelect = document.getElementById('range');
+    const errorBox = document.getElementById('errorBox');
+    const singleTable = document.getElementById('singleTable');
+    const singleTableTitle = document.getElementById('singleTableTitle');
+    const singleTableContent = document.getElementById('singleTableContent');
+    const fullTable = document.getElementById('fullTable');
+    const fullTableTitle = document.getElementById('fullTableTitle');
+    const fullTableContent = document.getElementById('fullTableContent');
+
+    // Generate multiplication table for a single number
+    function generateSingleTable() {
+      hideMessages();
+      const number = parseInt(numberInput.value);
+      const range = parseInt(rangeSelect.value);
+
+      if (!number || number < 1 || number > 20) {
+        showError('❌ Please enter a number between 1 and 20!');
+        return;
+      }
+
+      singleTableTitle.textContent = `Multiplication Table for ${number}`;
+      singleTableContent.innerHTML = '';
+
+      for (let i = 1; i <= range; i++) {
+        const result = number * i;
+        const row = document.createElement('div');
+        row.className = 'single-row';
+        row.innerHTML = `
+          <span class="equation">${number} × ${i} =</span>
+          <span class="result">${result}</span>
+        `;
+        singleTableContent.appendChild(row);
+      }
+
+      singleTable.classList.add('show');
+      fullTable.classList.remove('show');
+    }
+
+    // Generate full multiplication table grid
+    function generateFullTable() {
+      hideMessages();
+      const range = parseInt(rangeSelect.value);
+
+      fullTableTitle.textContent = `Complete Multiplication Table (1-${range})`;
+      fullTableContent.innerHTML = '';
+
+      // Create header row
+      const headerRow = document.createElement('tr');
+      headerRow.innerHTML = '<th>×</th>';
+
+      for (let i = 1; i <= range; i++) {
+        headerRow.innerHTML += `<th>${i}</th>`;
+      }
+      fullTableContent.appendChild(headerRow);
+
+      // Create data rows
+      for (let i = 1; i <= range; i++) {
+        const row = document.createElement('tr');
+        row.innerHTML = `<th>${i}</th>`;
+
+        for (let j = 1; j <= range; j++) {
+          const result = i * j;
+          const cellClass = (i === j) ? 'result-cell' : '';
+          row.innerHTML += `<td class="${cellClass}">${result}</td>`;
+        }
+
+        fullTableContent.appendChild(row);
+      }
+
+      fullTable.classList.add('show');
+      singleTable.classList.remove('show');
+    }
+
+    // Generate default full table on page load
+    window.addEventListener('load', function() {
+      generateFullTable();
+    });
+
+    function showError(message) {
+      errorBox.textContent = message;
+      errorBox.classList.add('show');
+    }
+
+    function hideMessages() {
+      errorBox.classList.remove('show');
+    }
+
+    // Allow Enter key to generate single table
+    numberInput.addEventListener('keypress', function(e) {
+      if (e.key === 'Enter') {
+        generateSingleTable();
+      }
+    });
+  </script>
+</body>
+</html>
