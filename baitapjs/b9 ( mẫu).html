@@ -1,0 +1,20 @@
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>ex02</title>
+    <script language="javascript">
+      var txta = prompt("Nhập số thứ nhất:");
+      var txtb = prompt("Nhập số thứ hai:");
+      if (txta == null || txtb == "" || isNaN(txta)) {
+        alert("Number 1 không hợp lệ!");
+      } else if (txtb == null || txtb == "" || isNaN(txtb)) {
+        alert("Number 2 không hợp lệ!");
+      } else {
+        var result = parseFloat(txta) + parseFloat(txtb);
+        alert("Result:\n " +
+          txta + " + " + txtb + " = " + result);
+      }
+      </script>
+  <body>
+  </body>
+</html>
